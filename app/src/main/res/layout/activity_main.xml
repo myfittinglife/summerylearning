@@ -17,67 +17,70 @@
             android:id="@+id/btn_eventbus_activity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="EventBus" />
+            android:text="EventBus"
+            android:textAllCaps="false"/>
+        <Button
+            android:id="@+id/btn_start_for_result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="StartActivityForResult"
+            android:textAllCaps="false"/>
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="2" />
+            android:text="" />
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="EventBus" />
+            android:text="" />
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="EventBus" />
+            android:text="" />
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="EventBus" />
+            android:text="" />
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="EventBus" />
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="EventBus" />
+            android:text="" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="EventBus" />
+            android:text="" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="EventBus" />
+            android:text="" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="EventBus" />
+            android:text="" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="EventBus" />
+            android:text="" />
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="EventBus" />
+            android:text="" />
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="EventBus" />
+            android:text="" />
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="EventBus" />
+            android:text="" />
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="EventBus" />
+            android:text="" />
     </LinearLayout>
 
 

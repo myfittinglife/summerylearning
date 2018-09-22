@@ -17,7 +17,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".eventbus.EventBusActivity" />
-        <activity android:name=".eventbus.AnotherActivity"></activity>
+        <activity android:name=".eventbus.AnotherActivity" />
+        <activity android:name=".startforresult.StartActivity" />
+        <activity android:name=".startforresult.ActivityForResult1" />
+        <activity android:name=".startforresult.ActivityForResult2"></activity>
     </application>
 
 </manifest>

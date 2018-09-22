@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.administrator.summarylearning.eventbus.EventBusActivity;
+import com.example.administrator.summarylearning.startforresult.StartActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -16,6 +17,8 @@ public class MainActivity extends AppCompatActivity {
 
     @BindView(R.id.btn_eventbus_activity)
     Button btn_eventbus_activity;
+    @BindView(R.id.btn_start_for_result)
+    Button btn_start_for_result;
 
 
     @Override
@@ -26,11 +29,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    @OnClick(R.id.btn_eventbus_activity)
+    @OnClick({R.id.btn_eventbus_activity,R.id.btn_start_for_result})
     public void OnClick(View view){
         switch (view.getId()){
             case R.id.btn_eventbus_activity:
                 startActivity(new Intent(this, EventBusActivity.class));
+                break;
+            case R.id.btn_start_for_result:
+                startActivity(new Intent(this, StartActivity.class));
+                break;
         }
     }
 }
