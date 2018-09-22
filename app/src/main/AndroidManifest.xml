@@ -16,7 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".eventbus.EventBusActivity"></activity>
+        <activity android:name=".eventbus.EventBusActivity" />
+        <activity android:name=".eventbus.AnotherActivity"></activity>
     </application>
 
 </manifest>

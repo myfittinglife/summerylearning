@@ -7,4 +7,33 @@
     android:orientation="vertical"
     tools:context=".eventbus.EventBusActivity">
 
+    <TextView
+        android:text="evenbus：接受的信息"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/tv_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:text="主线程发送信息"
+        android:id="@+id/btn_sent_activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:text="线程中发送消息"
+        android:id="@+id/btn_sent_thread"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/btn_cleantext"
+        android:text="清除"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/btn_toactivity"
+        android:text="跳转其他活动"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
 </LinearLayout>
