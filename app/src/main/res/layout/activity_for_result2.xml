@@ -12,9 +12,22 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="活动2" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:text="向上传送数据:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/et_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
     <Button
         android:id="@+id/btn_back"
-        android:text="返回上一个活动"
+        android:text="给上一个活动返回数据"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 </LinearLayout>

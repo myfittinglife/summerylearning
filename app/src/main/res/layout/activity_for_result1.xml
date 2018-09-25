@@ -12,9 +12,40 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="活动1" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:text="向上传送数据一:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/et_text1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
     <Button
-        android:id="@+id/btn_back"
-        android:text="返回上一个活动"
+        android:id="@+id/btn_back1"
+        android:text="给上一个活动返回数据一"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:text="向上传送数据二:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/et_text2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <Button
+        android:id="@+id/btn_back2"
+        android:text="给上一个活动返回数据二"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 </LinearLayout>
