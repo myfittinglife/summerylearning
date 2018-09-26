@@ -63,8 +63,12 @@ public class StartActivity extends AppCompatActivity {
 
                 break;
             case 2:                                        //活动二
-                textStr = data.getStringExtra("data");
-                tv_content2.setText(textStr);
+                if(resultCode==100){
+                    textStr = data.getStringExtra("data");
+                    tv_content2.setText(textStr);
+                }else {
+                    Toast.makeText(getApplicationContext(),"返回失败",Toast.LENGTH_SHORT).show();
+                }
                 break;
             default:
                 break;

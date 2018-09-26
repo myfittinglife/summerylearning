@@ -32,17 +32,6 @@
     <option name="id" value="Android" />
   </component>
   <component name="SvnBranchConfigurationManager">
-    <option name="myConfigurationMap">
-      <map>
-        <entry key="$PROJECT_DIR$/app">
-          <value>
-            <SvnBranchConfiguration>
-              <option name="trunkUrl" value="svn://192.168.1.192/Android/code2/Clanunity/swipMenuRecyclerLibrary/ldFiles/summerylearning/app" />
-            </SvnBranchConfiguration>
-          </value>
-        </entry>
-      </map>
-    </option>
     <option name="mySupportsUserInfoFilter" value="true" />
   </component>
 </project>
