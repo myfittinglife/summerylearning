@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.administrator.summarylearning.eventbus.EventBusActivity;
+import com.example.administrator.summarylearning.interestlablerecyclerview.ActivityInterestLable;
 import com.example.administrator.summarylearning.okgo.ActivityOkGo;
 import com.example.administrator.summarylearning.startforresult.StartActivity;
 
@@ -22,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
     Button btn_start_for_result;
     @BindView(R.id.btn_okgo_activity)
     Button btn_okgo_activity;
+    @BindView(R.id.btn_lable_activity)
+    Button btn_lable_activity;
 
 
     @Override
@@ -32,17 +35,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    @OnClick({R.id.btn_eventbus_activity, R.id.btn_start_for_result, R.id.btn_okgo_activity})
+    @OnClick({R.id.btn_eventbus_activity, R.id.btn_start_for_result, R.id.btn_okgo_activity,R.id.btn_lable_activity})
     public void OnClick(View view) {
         switch (view.getId()) {
             case R.id.btn_eventbus_activity:
                 startActivity(new Intent(this, EventBusActivity.class));
                 break;
-            case R.id.btn_start_for_result:
+            case R.id.btn_start_for_result:                                                       //
                 startActivity(new Intent(this, StartActivity.class));
                 break;
-            case R.id.btn_okgo_activity:
+            case R.id.btn_okgo_activity:                                                         //OkGo框架
                 startActivity(new Intent(this, ActivityOkGo.class));
+                break;
+            case R.id.btn_lable_activity:
+                startActivity(new Intent(this, ActivityInterestLable.class));
                 break;
             default:
                 break;
