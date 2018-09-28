@@ -16,4 +16,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
     </android.support.v7.widget.RecyclerView>
+    <TextView
+        android:id="@+id/tv_num"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/btn_getnum"
+        android:text="已选标签数"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 </LinearLayout>

@@ -4,6 +4,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.administrator.summarylearning.R;
 import com.example.administrator.summarylearning.interestlablerecyclerview.adapter.LinkLabelAdapter;
@@ -14,6 +17,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * 兴趣标签recyclerview实现       总结：就是使用多布局
@@ -22,6 +26,13 @@ public class ActivityInterestLable extends AppCompatActivity {
 
     @BindView(R.id.recyclerview)
     RecyclerView recyclerView;
+    @BindView(R.id.tv_num)
+    TextView tv_num;
+    @BindView(R.id.btn_getnum)
+    Button btn_getnum;
+
+    private int num;
+
 
     private List<Bean> beanList = new ArrayList<>();
 
@@ -73,5 +84,16 @@ public class ActivityInterestLable extends AppCompatActivity {
 
 
 
+    }
+
+    @OnClick(R.id.btn_getnum)
+    public void onClick(View view){             //所选标签数计数
+        num=0;
+        for(int i = 0;i<beanList.size();i++){
+            if(beanList.get(i).getType()==200&&beanList.get(i).getSelected()==true){
+                num++;
+            }
+        }
+        tv_num.setText(String.valueOf(num));
     }
 }
