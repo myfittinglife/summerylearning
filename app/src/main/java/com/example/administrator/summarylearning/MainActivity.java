@@ -8,7 +8,9 @@ import android.widget.Button;
 
 import com.example.administrator.summarylearning.eventbus.EventBusActivity;
 import com.example.administrator.summarylearning.interestlablerecyclerview.ActivityInterestLable;
+import com.example.administrator.summarylearning.interfacecallback.InterfaceCallbackActivity;
 import com.example.administrator.summarylearning.okgo.ActivityOkGo;
+import com.example.administrator.summarylearning.selectpicture.SelectPictureActivity;
 import com.example.administrator.summarylearning.startforresult.StartActivity;
 
 import butterknife.BindView;
@@ -25,6 +27,10 @@ public class MainActivity extends AppCompatActivity {
     Button btn_okgo_activity;
     @BindView(R.id.btn_lable_activity)
     Button btn_lable_activity;
+    @BindView(R.id.btn_matisse_activity)
+    Button btn_matisse_activity;
+    @BindView(R.id.btn_callback)
+    Button btn_callback;
 
 
     @Override
@@ -35,20 +41,26 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    @OnClick({R.id.btn_eventbus_activity, R.id.btn_start_for_result, R.id.btn_okgo_activity,R.id.btn_lable_activity})
+    @OnClick({R.id.btn_eventbus_activity, R.id.btn_start_for_result, R.id.btn_okgo_activity,R.id.btn_lable_activity,R.id.btn_matisse_activity,R.id.btn_callback})
     public void OnClick(View view) {
         switch (view.getId()) {
-            case R.id.btn_eventbus_activity:
+            case R.id.btn_eventbus_activity:                                                        //eventbus
                 startActivity(new Intent(this, EventBusActivity.class));
                 break;
-            case R.id.btn_start_for_result:                                                       //
+            case R.id.btn_start_for_result:                                                         //startforresult
                 startActivity(new Intent(this, StartActivity.class));
                 break;
-            case R.id.btn_okgo_activity:                                                         //OkGo框架
+            case R.id.btn_okgo_activity:                                                            //OkGo框架
                 startActivity(new Intent(this, ActivityOkGo.class));
                 break;
-            case R.id.btn_lable_activity:
+            case R.id.btn_lable_activity:                                                           //兴趣标签
                 startActivity(new Intent(this, ActivityInterestLable.class));
+                break;
+            case R.id.btn_matisse_activity:                                                         //打开相册活动
+                startActivity(new Intent(this, SelectPictureActivity.class));
+                break;
+            case R.id.btn_callback:                                                                 //接口回调
+                startActivity(new Intent(this, InterfaceCallbackActivity.class));
                 break;
             default:
                 break;

@@ -37,6 +37,7 @@
             android:text="JCameraView"
             android:textAllCaps="false"/>
         <Button
+            android:id="@+id/btn_matisse_activity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Matisse图片选择器"
@@ -62,9 +63,10 @@
             android:text="" />
 
         <Button
+            android:id="@+id/btn_callback"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="" />
+            android:text="接口回调" />
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
