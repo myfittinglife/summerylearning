@@ -34,23 +34,23 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="JCameraView"
+            android:text="JCameraView未做"
             android:textAllCaps="false"/>
         <Button
             android:id="@+id/btn_matisse_activity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Matisse图片选择器"
+            android:text="Matisse图片选择器未成功"
             android:textAllCaps="false"/>
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="String工具类"
+            android:text="String工具类未做"
             android:textAllCaps="false"/>
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="环信使用" />
+            android:text="环信使用未做" />
         <Button
             android:id="@+id/btn_lable_activity"
             android:layout_width="match_parent"
@@ -58,9 +58,10 @@
             android:text="兴趣标签" />
 
         <Button
+            android:id="@+id/btn_get_phone_info"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="" />
+            android:text="获取手机信息未做" />
 
         <Button
             android:id="@+id/btn_callback"
@@ -68,9 +69,10 @@
             android:layout_height="wrap_content"
             android:text="接口回调" />
         <Button
+            android:id="@+id/btn_expand_list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="" />
+            android:text="二级列表" />
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

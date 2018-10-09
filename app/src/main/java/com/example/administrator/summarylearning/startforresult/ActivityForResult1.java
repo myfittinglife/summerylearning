@@ -37,7 +37,8 @@ public class ActivityForResult1 extends AppCompatActivity {
         Intent intent = new Intent();
         switch (view.getId()) {
             case R.id.btn_back1:
-                intent.putExtra("data", et_text1.getText().toString().trim());
+//                intent.putExtra("data", et_text1.getText().toString().trim());
+                intent.putExtra("data", true);
                 setResult(100, intent);                     //resultCode用来判断返回结果是否成功
                 finish();
                 break;

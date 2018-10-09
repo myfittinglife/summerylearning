@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -54,8 +55,10 @@ public class StartActivity extends AppCompatActivity {
         switch (requestCode) {
             case 1:                                         //活动一
                 if(resultCode==100){                                            //resultCode用来判断数据返回是否成功
-                    textStr = data.getStringExtra("data");
-                    tv_content1.setText(textStr);
+//                    textStr = data.getStringExtra("data");
+                    Boolean a = data.getBooleanExtra("data", false);
+                    Log.i("TAG", "onActivityResult: "+a);
+                    tv_content1.setText(String.valueOf(a));
                 }
                 else {
                     Toast.makeText(getApplicationContext(),"返回失败",Toast.LENGTH_SHORT).show();
