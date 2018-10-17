@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.administrator.summarylearning.animation.AnimationActivity;
 import com.example.administrator.summarylearning.eventbus.EventBusActivity;
 import com.example.administrator.summarylearning.interestlablerecyclerview.ActivityInterestLable;
 import com.example.administrator.summarylearning.interfacecallback.InterfaceCallbackActivity;
@@ -37,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
     Button btn_get_phone_info;
     @BindView(R.id.btn_expand_list)
     Button btn_expand_list;
+    @BindView(R.id.btn_animation)
+    Button btn_animation;
 
 
     @Override
@@ -47,7 +50,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    @OnClick({R.id.btn_eventbus_activity, R.id.btn_start_for_result, R.id.btn_okgo_activity,R.id.btn_lable_activity,R.id.btn_matisse_activity,R.id.btn_callback,R.id.btn_get_phone_info,R.id.btn_expand_list})
+    @OnClick({R.id.btn_eventbus_activity, R.id.btn_start_for_result, R.id.btn_okgo_activity,R.id.btn_lable_activity,R.id.btn_matisse_activity,R.id.btn_callback,R.id.btn_get_phone_info,R.id.btn_expand_list
+    ,R.id.btn_animation})
     public void OnClick(View view) {
         switch (view.getId()) {
             case R.id.btn_eventbus_activity:                                                        //eventbus
@@ -68,11 +72,14 @@ public class MainActivity extends AppCompatActivity {
             case R.id.btn_callback:                                                                 //接口回调
                 startActivity(new Intent(this, InterfaceCallbackActivity.class));
                 break;
-            case R.id.btn_get_phone_info:                                                           //获取手机信息
+            case R.id.btn_get_phone_info:                                                           //获取手机信息未实现
                 Toast.makeText(this,"获取手机信息",Toast.LENGTH_SHORT).show();
                 break;
-            case R.id.btn_expand_list:
+            case R.id.btn_expand_list:                                                              //二级列表
                 startActivity(new Intent(this, SecondaryListActivity.class));
+                break;
+            case R.id.btn_animation:
+                startActivity(new Intent(this, AnimationActivity.class));             //动画
                 break;
 
             default:

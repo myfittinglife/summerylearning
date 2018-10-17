@@ -29,7 +29,7 @@ public class SelectPictureActivity extends AppCompatActivity {
     Button btn_open_select;
     @BindView(R.id.iv_photo)
     ImageView imageView;
-    PhotoSelUtil photoSelUtil=new PhotoSelUtil();
+    PhotoSelUtil photoSelUtil=new PhotoSelUtil(this);       //主要
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -10,17 +10,24 @@ import com.example.administrator.summarylearning.utils.ToastUtil;
 import com.zhihu.matisse.Matisse;
 import com.zhihu.matisse.MimeType;
 
-
+/**
+ * 图片选择工具类
+ * 主要对Matisse的一些参数进行设定
+ */
 public class PhotoSelUtil {
 
     private  Activity context;
     private  int size=1;       //最大选择数
     public static final int REQUEST_CODE_CHOOSE = 300;//照片选择回调
 
+    public PhotoSelUtil(Activity context) {
+        this.context = context;
+    }
+
     public void sel(){
-        boolean whiteandread = PermissionUtil.verifyReadAndWritePermissions(context);
+        boolean writeandread = PermissionUtil.verifyReadAndWritePermissions(context);
         boolean takephoto = PermissionUtil.verifyTakePhoto(context);
-        if (!whiteandread) {
+        if (!writeandread) {
             ToastUtil.showToast(context, "请开启读写权限");
             return;
         }
@@ -34,8 +41,8 @@ public class PhotoSelUtil {
                 .countable(true)
                 .maxSelectable(size)                                             //最大选择数
                 .restrictOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)  //选择方向
-                .theme(com.zhihu.matisse.R.style.Matisse_Zhihu)
-                .imageEngine(new Glide4Engine())
+                .theme(com.zhihu.matisse.R.style.Matisse_Zhihu)                     //主题
+                .imageEngine(new Glide4Engine())                                    //图片引擎，glide4请用自定义的，旧版直接GlideEngine（）就行
                 .forResult(REQUEST_CODE_CHOOSE);
     }
 

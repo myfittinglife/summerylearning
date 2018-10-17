@@ -39,16 +39,16 @@ public class EventBusActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_bus);
         ButterKnife.bind(this);
-        EventBus.getDefault().register(this);   //注册订阅者
+        EventBus.getDefault().register(this);   //注册订阅者①
     }
 
     @OnClick({R.id.btn_sent_activity, R.id.btn_sent_thread,R.id.btn_cleantext,R.id.btn_toactivity})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_sent_activity:
-                EventBus.getDefault().post(new MessageEvent("小栋", "152****3160"));      //1、主线程中发送
+                EventBus.getDefault().post(new MessageEvent("小栋", "152****3160"));      //1、主线程中发送②
                 break;
-            case R.id.btn_sent_thread:                                                                    //2、子线程中发送
+            case R.id.btn_sent_thread:                                                                    //2、子线程中发送②
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
@@ -76,13 +76,13 @@ public class EventBusActivity extends AppCompatActivity {
      * 定义处理接受的方法
      * @param event     自定义的事件
      */
-    @Subscribe(threadMode = ThreadMode.MAIN)
+    @Subscribe(threadMode = ThreadMode.MAIN)                                                        //③
     public void messageEventBus(MessageEvent event) {
         tv_message.setText("姓名：" + event.getName() +"  "+ "电话：" + event.getTel());
     }
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        EventBus.getDefault().unregister(this); //防止内存泄漏
+        EventBus.getDefault().unregister(this); //防止内存泄漏                              //④
     }
 }

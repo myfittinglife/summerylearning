@@ -5,8 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
-import android.widget.ExpandableListView;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.administrator.summarylearning.R;
@@ -43,21 +41,21 @@ public class ExpandListAdapter extends BaseExpandableListAdapter {
     }
 
     @Override
-    public Object getChild(int i, int i1) {
-        return dateBeans.get(i).getSonList().get(i1);
+    public Object getChild(int groupPosition, int childPosition) {     //返回二级列表单个item
+        return dateBeans.get(groupPosition).getSonList().get(childPosition);
     }
 
     @Override
-    public long getGroupId(int groupPosition) {
+    public long getGroupId(int groupPosition) {         //返回一级列表位置
         return groupPosition;
     }
 
     @Override
-    public long getChildId(int groupPosition, int childPosition) {
+    public long getChildId(int groupPosition, int childPosition) {      //返回二级列表位置
         return childPosition;
     }
 
-    //每个item的id是否是固定？一般为true
+    //每个item的id是否是固定，一般为true
     @Override
     public boolean hasStableIds() {
         return true;
@@ -74,18 +72,18 @@ public class ExpandListAdapter extends BaseExpandableListAdapter {
         return convertView;
     }
 
-    //【重要】填充一级列表
+    //【重要】填充二级列表
     @Override
     public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
         if (convertView == null) {
             convertView = LayoutInflater.from(context).inflate(R.layout.item_expand_son, null);
         }
 
-        TextView tv_child = (TextView) convertView.findViewById(R.id.tv_son );
+        TextView tv_child = (TextView) convertView.findViewById(R.id.tv_son);
         tv_child.setText(dateBeans.get(groupPosition).getSonList().get(childPosition));
         return convertView;
     }
-    //二级列表中的item是否能够被选中？可以改为true
+    //二级列表中的item是否能够被选中，改为true
     @Override
     public boolean isChildSelectable(int i, int i1) {
         return true;

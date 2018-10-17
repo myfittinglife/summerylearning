@@ -27,14 +27,14 @@ public class SecondaryListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_secondary_list);
 
         expandableListView = findViewById(R.id.expand_list);
-        expandableListView.setGroupIndicator(null);     //取消掉向下的箭头
+        expandableListView.setGroupIndicator(null);     //取消掉默认的向下的箭头
         initDate();
         expandListAdapter = new ExpandListAdapter(this,dateBeans);
         expandableListView.setAdapter(expandListAdapter);
         expandableListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
             @Override
-            public boolean onChildClick(ExpandableListView expandableListView, View view, int i, int i1, long l) {
-                Toast.makeText(getApplicationContext(),dateBeans.get(i).getFathername()+":"+dateBeans.get(i).getSonList().get(i1),Toast.LENGTH_SHORT).show();
+            public boolean onChildClick(ExpandableListView expandableListView, View view, int groupId, int childId, long l) {
+                Toast.makeText(getApplicationContext(),dateBeans.get(groupId).getFathername()+":"+dateBeans.get(groupId).getSonList().get(childId),Toast.LENGTH_SHORT).show();
                 return false;
             }
         });

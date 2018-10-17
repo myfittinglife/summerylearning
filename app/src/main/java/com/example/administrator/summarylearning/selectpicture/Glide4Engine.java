@@ -11,7 +11,9 @@ import com.bumptech.glide.request.RequestOptions;
 import com.zhihu.matisse.engine.ImageEngine;
 
 /**
- * 使Matisses支持glide4的加载方式重写
+ * 使Matisses支持glide4的加载方式重写，因为框架使用的是glide旧版本，若不重写，就无法使用新版glide，若不看，直接复制此文件即可
+ *  https://github.com/zhihu/Matisse
+ * 参考官方文档：https://github.com/zhihu/Matisse/blob/master/sample/src/main/java/com/zhihu/matisse/sample/Glide4Engine.java
  */
 public class Glide4Engine implements ImageEngine {
     @Override
