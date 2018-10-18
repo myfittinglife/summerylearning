@@ -20,7 +20,13 @@
                 android:layout_gravity="center_horizontal|center_vertical"/>
             <Button
                 android:id="@+id/btn_start_frame_animation"
-                android:text="开启帧动画"
+                android:text="animation-list方式添加帧动画"
+                android:textAllCaps="false"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <Button
+                android:id="@+id/btn_add_frame_animation"
+                android:text="代码方式添加帧动画"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
             <Button
