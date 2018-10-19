@@ -83,7 +83,24 @@
             android:id="@+id/btn_animation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="动画学习" />
+            android:text="动画学习进行中" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="权限申请工具未做" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="recyclerview总结未做"
+            android:textAllCaps="false"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="上拉加载下拉刷新未做" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="" />
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

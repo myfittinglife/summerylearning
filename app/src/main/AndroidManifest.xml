@@ -34,7 +34,8 @@
         <activity android:name=".selectpicture.SelectPictureActivity" />
         <activity android:name=".interfacecallback.InterfaceCallbackActivity" />
         <activity android:name=".secondarylist.SecondaryListActivity" />
-        <activity android:name=".animation.AnimationActivity"></activity>
+        <activity android:name=".animation.AnimationActivity" />
+        <activity android:name=".animation.TweenActivity"></activity>
     </application>
 
 </manifest>
