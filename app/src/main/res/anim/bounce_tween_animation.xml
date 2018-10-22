@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <!---->
 <!--android:interpolator="@android:anim/bounce_interpolator"    bounce插值器,动画结束的时候弹起，类似皮球落地-->
-
 <set xmlns:android="http://schemas.android.com/apk/res/android"
     android:interpolator="@android:anim/bounce_interpolator"
     android:fillAfter="false"
@@ -18,3 +16,10 @@
         android:toYScale="1.0"
         android:duration="1000"/>
 </set>
+<!--set是一个动画集合，包含多个动画的组合，也可包含set-->
+<!--alpha透明度0全透明1完全不透明-->
+<!--scale   小于1缩小 大于1放大-->
+<!--android:interpolator="@android:anim/bounce_interpolator"表示插值器类型-->
+<!--android:fillAfter="false"表示动画结束是否停在结束位置-->
+<!--android:repeatMode="restart"表示重复模式-->
+<!--android:shareInterpolator="true"表示子元素是否使用此插值器-->

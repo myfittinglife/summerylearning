@@ -62,10 +62,10 @@ public class AnimationActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "没有帧动画", Toast.LENGTH_SHORT).show();
                 }
                 break;
-            case R.id.btn_add_frame_animation:
+            case R.id.btn_add_frame_animation:      //代码方式添加帧动画
                 addFrame();
                 break;
-            case R.id.btn_start_tween:
+            case R.id.btn_start_tween:              //补间动画
                 Intent intent = new Intent(this, TweenActivity.class);
                 startActivity(intent);
 
