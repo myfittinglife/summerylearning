@@ -12,6 +12,7 @@ import com.example.administrator.summarylearning.eventbus.EventBusActivity;
 import com.example.administrator.summarylearning.interestlablerecyclerview.ActivityInterestLable;
 import com.example.administrator.summarylearning.interfacecallback.InterfaceCallbackActivity;
 import com.example.administrator.summarylearning.okgo.ActivityOkGo;
+import com.example.administrator.summarylearning.ringvibrateactivity.RingAndVibrateActivity;
 import com.example.administrator.summarylearning.secondarylist.SecondaryListActivity;
 import com.example.administrator.summarylearning.selectpicture.SelectPictureActivity;
 import com.example.administrator.summarylearning.startforresult.StartActivity;
@@ -40,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
     Button btn_expand_list;
     @BindView(R.id.btn_animation)
     Button btn_animation;
+    @BindView(R.id.btn_vibrate_ring)     //震动
+    Button btn_vibrate_ring;
 
 
     @Override
@@ -51,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     @OnClick({R.id.btn_eventbus_activity, R.id.btn_start_for_result, R.id.btn_okgo_activity,R.id.btn_lable_activity,R.id.btn_matisse_activity,R.id.btn_callback,R.id.btn_get_phone_info,R.id.btn_expand_list
-    ,R.id.btn_animation})
+    ,R.id.btn_animation,R.id.btn_vibrate_ring})
     public void OnClick(View view) {
         switch (view.getId()) {
             case R.id.btn_eventbus_activity:                                                        //eventbus
@@ -80,6 +83,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.btn_animation:
                 startActivity(new Intent(this, AnimationActivity.class));             //动画
+                break;
+            case R.id.btn_vibrate_ring:
+                startActivity(new Intent(this, RingAndVibrateActivity.class));             //震动响铃
                 break;
 
             default:
