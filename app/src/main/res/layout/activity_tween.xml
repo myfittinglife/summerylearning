@@ -6,118 +6,158 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".animation.TweenActivity">
+
     <TextView
-        android:text="Interpolator插值器"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="Interpolator插值器" />
+
     <ImageView
         android:id="@+id/iv_animation"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/record_icon"/>
+        android:src="@drawable/record_icon" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:background="#C4C4C4"
         android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp">
+        android:layout_marginRight="5dp"
+        android:background="#EAEAEA"
+        android:orientation="horizontal">
 
         <Button
             android:id="@+id/btn_accelerate"
-            android:text="Accelerate"
-            android:textAllCaps="false"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:background="#00000000"/>
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:text="Accelerate"
+            android:textAllCaps="false" />
+
         <Button
             android:id="@+id/btn_decelerate"
-            android:text="Decelerate"
-            android:textAllCaps="false"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:background="#00000000"/>
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:text="Decelerate"
+            android:textAllCaps="false" />
+
         <Button
             android:id="@+id/btn_accelerate_decelerate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:gravity="center_horizontal"
             android:text="Accelerate
  Decelerate"
-            android:gravity="center_horizontal"
-            android:textAllCaps="false"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:background="#00000000"/>
+            android:textAllCaps="false" />
 
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:background="#C4C4C4"
-        android:layout_marginTop="10dp"
         android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp">
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="10dp"
+        android:background="#EAEAEA"
+        android:orientation="horizontal">
+
         <Button
             android:id="@+id/btn_anticipate"
-            android:text="Anticipate"
-            android:textAllCaps="false"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:background="#00000000"/>
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:text="Anticipate"
+            android:textAllCaps="false" />
+
         <Button
             android:id="@+id/btn_anticipate_overshoot"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#00000000"
             android:text="Anticipate
  Overshoot"
-            android:textAllCaps="false"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:background="#00000000"/>
+            android:textAllCaps="false" />
+
         <Button
             android:id="@+id/btn_bounce"
-            android:text="Bounce"
-            android:textAllCaps="false"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:background="#00000000"/>
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:text="Bounce"
+            android:textAllCaps="false" />
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:background="#C4C4C4"
-        android:layout_marginTop="10dp"
         android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp">
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="10dp"
+        android:background="#EAEAEA"
+        android:orientation="horizontal">
+
         <Button
             android:id="@+id/btn_cycle"
-            android:text="Cycle"
-            android:textAllCaps="false"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:background="#00000000"/>
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:text="Cycle"
+            android:textAllCaps="false" />
+
         <Button
             android:id="@+id/btn_linear"
-            android:text="Linear"
-            android:textAllCaps="false"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:background="#00000000"/>
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:text="Linear"
+            android:textAllCaps="false" />
+
         <Button
             android:id="@+id/btn_overshoot"
-            android:text="Overshoot"
-            android:textAllCaps="false"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:background="#00000000"/>
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:text="Overshoot"
+            android:textAllCaps="false" />
     </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/iv_cd"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/cd_icon" />
+        <ImageView
+            android:id="@+id/iv_music_icon"
+            android:layout_width="31dp"
+            android:layout_height="31dp"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/music_icon" />
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/btn_rotate_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="#EAEAEA"
+        android:text="混合动画" />
 
 
 </LinearLayout>

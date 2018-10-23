@@ -7,7 +7,6 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.example.administrator.summarylearning.R;
 
@@ -45,6 +44,13 @@ public class TweenActivity extends AppCompatActivity {
     @BindView(R.id.btn_overshoot)
     Button btnOvershoot;
 
+    @BindView(R.id.btn_rotate_image)
+    Button btnRotateImage;
+    @BindView(R.id.iv_music_icon)
+    ImageView iv_music_icon;
+    @BindView(R.id.iv_cd)
+    ImageView ivCd;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +60,8 @@ public class TweenActivity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.btn_accelerate, R.id.btn_decelerate, R.id.btn_accelerate_decelerate, R.id.btn_anticipate, R.id.btn_anticipate_overshoot, R.id.btn_bounce, R.id.btn_cycle, R.id.btn_linear,R.id.btn_overshoot})
+    @OnClick({R.id.btn_accelerate, R.id.btn_decelerate, R.id.btn_accelerate_decelerate, R.id.btn_anticipate, R.id.btn_anticipate_overshoot, R.id.btn_bounce, R.id.btn_cycle, R.id.btn_linear, R.id.btn_overshoot
+            , R.id.btn_rotate_image})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_accelerate:                                                               //加速插值器
@@ -63,10 +70,11 @@ public class TweenActivity extends AppCompatActivity {
                     @Override
                     public void onAnimationStart(Animation animation) {
                     }
+
                     @Override
                     public void onAnimationEnd(Animation animation) {
-                            animation.reset();      //没这个光start只会执行两次
-                            animation.start();
+                        animation.reset();      //没这个光start只会执行两次
+                        animation.start();
                     }
 
                     @Override
@@ -111,10 +119,14 @@ public class TweenActivity extends AppCompatActivity {
                 Animation animation9 = AnimationUtils.loadAnimation(this, R.anim.overshoot_animation);
                 iv_animation.startAnimation(animation9);
                 break;
+            case R.id.btn_rotate_image: //混合动画
+                Animation animation10 = AnimationUtils.loadAnimation(this, R.anim.rotate_animation);
+                ivCd.startAnimation(animation10);
+                Animation animation11 = AnimationUtils.loadAnimation(this, R.anim.move);
+                iv_music_icon.startAnimation(animation11);
+                break;
         }
     }
-
-
 
 
 }

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--旋转动画-->
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:interpolator="@android:anim/linear_interpolator"
+    android:repeatMode="restart"
+    android:fillAfter="true"
+    android:shareInterpolator="true">
+    <rotate
+        android:fromDegrees="0"
+        android:toDegrees="360"
+        android:pivotX="50%"
+        android:pivotY="50%"
+        android:duration="3000"
+        android:repeatMode="restart"
+        android:repeatCount="-1"/>
+
+</set>
+<!--fromDegrees旋转开始角度   正顺时针，负逆时针-->
+<!--pivotX和pivotY是旋转中心点的位置，纯数字代表相对本View的距离后的坐标-->
+<!--只有子元素加上了repeatCount才能让他无线循环-->
+<!--只有加上linear_interpolator插值器才会在动画循环的时候不会出现两次之间的停顿，系统默认的是accelerate_interpolator-->
