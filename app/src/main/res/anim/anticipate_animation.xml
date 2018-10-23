@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:duration="1000"
+    android:fillAfter="false"
+    android:interpolator="@android:anim/anticipate_interpolator">
+    <translate
+        android:fromXDelta="0%p"
+        android:toXDelta="100%p" />
+</set>
+<!--开始的时候先向后甩一点然后向前，就好比人扔东西会先向后甩一下，这样才能抛的远-->

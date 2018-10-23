@@ -58,14 +58,11 @@ public class TweenActivity extends AppCompatActivity {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_accelerate:                                                               //加速插值器
-                Toast.makeText(getApplicationContext(),"1",Toast.LENGTH_SHORT).show();
                 Animation animation1 = AnimationUtils.loadAnimation(this, R.anim.accelerate_animation);
                 animation1.setAnimationListener(new Animation.AnimationListener() {     //设置监听器重复启动动画
                     @Override
                     public void onAnimationStart(Animation animation) {
-
                     }
-
                     @Override
                     public void onAnimationEnd(Animation animation) {
                             animation.reset();      //没这个光start只会执行两次
@@ -74,7 +71,6 @@ public class TweenActivity extends AppCompatActivity {
 
                     @Override
                     public void onAnimationRepeat(Animation animation) {
-
                     }
                 });
 //                animation1.setRepeatMode(Animation.REVERSE);              不成功
@@ -82,37 +78,38 @@ public class TweenActivity extends AppCompatActivity {
                 iv_animation.startAnimation(animation1);
 
                 break;
-            case R.id.btn_decelerate:
-                Toast.makeText(getApplicationContext(),"2",Toast.LENGTH_SHORT).show();
+            case R.id.btn_decelerate:                                                               //decelerate_interpolator开始速度快后面减速
+                Animation animation2 = AnimationUtils.loadAnimation(this, R.anim.decelerate_animation);
+                iv_animation.startAnimation(animation2);
                 break;
-            case R.id.btn_accelerate_decelerate:
-                Toast.makeText(getApplicationContext(),"3",Toast.LENGTH_SHORT).show();
+            case R.id.btn_accelerate_decelerate:        //先加速后减速
+                Animation animation3 = AnimationUtils.loadAnimation(this, R.anim.accelerate_decelerate_animation);
+                iv_animation.startAnimation(animation3);
                 break;
-            case R.id.btn_anticipate:
-                Toast.makeText(getApplicationContext(),"4",Toast.LENGTH_SHORT).show();
+            case R.id.btn_anticipate:       //开始的时候先向后甩一点然后向前，就好比人扔东西会先向后甩一下，这样才能抛的远
+                Animation animation4 = AnimationUtils.loadAnimation(this, R.anim.anticipate_animation);
+                iv_animation.startAnimation(animation4);
                 break;
-            case R.id.btn_anticipate_overshoot:
-                Toast.makeText(getApplicationContext(),"5",Toast.LENGTH_SHORT).show();
+            case R.id.btn_anticipate_overshoot:     //先向后抛然后向前，到达终点后会有回弹一下效果
+                Animation animation5 = AnimationUtils.loadAnimation(this, R.anim.anticipate_overshoot);
+                iv_animation.startAnimation(animation5);
                 break;
-            case R.id.btn_bounce:
-                Toast.makeText(getApplicationContext(),"6",Toast.LENGTH_SHORT).show();
-
-                //bounce插值器     动画结束的时候弹起，类似皮球落地，会弹几下才停止
+            case R.id.btn_bounce:       //bounce插值器     动画结束的时候弹起，类似皮球落地，会弹几下才停止
                 //跳跃，快到目的值时值会跳跃，如目的值100，后面的值可能依次为85，77，70，80，90，100
-                Animation animation = AnimationUtils.loadAnimation(this, R.anim.bounce_tween_animation);
-                iv_animation.startAnimation(animation);
+                Animation animation6 = AnimationUtils.loadAnimation(this, R.anim.bounce_tween_animation);
+                iv_animation.startAnimation(animation6);
                 break;
-            case R.id.btn_cycle:
-                Toast.makeText(getApplicationContext(),"7",Toast.LENGTH_SHORT).show();
-
+            case R.id.btn_cycle:        //动画循环播放特定的次数回到原点，速率改变沿着正弦曲线
+                Animation animation7 = AnimationUtils.loadAnimation(this, R.anim.cycle_animation);
+                iv_animation.startAnimation(animation7);
                 break;
-            case R.id.btn_linear:
-                Toast.makeText(getApplicationContext(),"8",Toast.LENGTH_SHORT).show();
-
+            case R.id.btn_linear:       //从开始到结束匀速运动
+                Animation animation8 = AnimationUtils.loadAnimation(this, R.anim.linear_animation);
+                iv_animation.startAnimation(animation8);
                 break;
-            case R.id.btn_overshoot:
-                Toast.makeText(getApplicationContext(),"9",Toast.LENGTH_SHORT).show();
-
+            case R.id.btn_overshoot:    //向前超过设定值一点然后返回
+                Animation animation9 = AnimationUtils.loadAnimation(this, R.anim.overshoot_animation);
+                iv_animation.startAnimation(animation9);
                 break;
         }
     }

@@ -16,6 +16,7 @@
         android:toYScale="1.0"
         android:duration="1000"/>
 </set>
+<!--bounce_interpolator动画结束的时候弹起，类似皮球落地，会弹几下才停止-->
 <!--set是一个动画集合，包含多个动画的组合，也可包含set-->
 <!--alpha透明度0全透明1完全不透明-->
 <!--scale   小于1缩小 大于1放大-->

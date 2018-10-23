@@ -12,9 +12,9 @@
         android:layout_height="wrap_content" />
     <ImageView
         android:id="@+id/iv_animation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@mipmap/ic_launcher"/>
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/record_icon"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

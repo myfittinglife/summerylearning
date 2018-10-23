@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:interpolator="@android:anim/anticipate_overshoot_interpolator"
+    android:duration="5000"
+    android:fillAfter="false">
+    <translate
+        android:fromXDelta="0%p"
+        android:toXDelta="100%p"/>
+</set>
+<!--anticipate_overshoot_interpolator先向后抛然后向前，到达终点后会有回弹一下效果-->

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:interpolator="@android:anim/cycle_interpolator"
+    android:duration="1000"
+    android:fillAfter="false">
+    <translate
+        android:fromXDelta="0%p"
+        android:toXDelta="100%p"/>
+</set>
+<!--cycle_interpolator动画循环播放特定的次数回到原点，速率改变沿着正弦曲线-->
