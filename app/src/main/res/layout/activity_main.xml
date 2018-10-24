@@ -83,7 +83,7 @@
             android:id="@+id/btn_animation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="动画学习进行中" />
+            android:text="动画学习进行中..." />
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -103,9 +103,11 @@
             android:layout_height="wrap_content"
             android:text="震动响铃工具类" />
         <Button
+            android:id="@+id/btn_fragment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="" />
+            android:text="Fragment学习中..."
+            android:textAllCaps="false"/>
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

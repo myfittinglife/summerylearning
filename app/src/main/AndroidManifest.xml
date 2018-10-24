@@ -38,6 +38,10 @@
         <activity android:name=".animation.AnimationActivity" />
         <activity android:name=".animation.TweenActivity" />
         <activity android:name=".ringvibrateactivity.RingAndVibrateActivity" />
+        <activity android:name=".fragment.FragmentContainer" />
+        <activity android:name=".fragment.FunctionListActivity" />
+        <activity android:name=".fragment.backstack_learn.BackStackActivity" />
+        <activity android:name=".fragment.createfragment.CreateFragmentActivity"></activity>
     </application>
 
 </manifest>

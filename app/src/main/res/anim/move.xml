@@ -7,9 +7,9 @@
 
     <translate
         android:fromXDelta="0%"
-        android:toXDelta="-50%"
+        android:toXDelta="-250%"
         android:fromYDelta="0%"
-        android:toYDelta="-50%"
+        android:toYDelta="-20%"
         android:duration="2000"
         android:repeatCount="-1" />
     <rotate
@@ -26,5 +26,5 @@
         android:repeatCount="-1"/>
 </set>
 <!--translate移动-->
-<!--rotate旋转-->
+<!--rotate旋转     android:pivotY="50%"表示旋转起点的坐标-->
 <!--alpha透明度-->

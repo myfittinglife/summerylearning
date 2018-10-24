@@ -42,4 +42,7 @@ dependencies {
     implementation 'com.zhihu.android:matisse:0.5.0-alpha4'
     //友盟    看是咋用的
     implementation 'com.umeng.analytics:analytics:latest.integration'
+    //测试
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
+
 }

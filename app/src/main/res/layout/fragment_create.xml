@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:text="向Fragment中传的参数为："
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/tv_argument"
+        android:layout_width="match_parent"
+        android:layout_height="100dp" />
+    <TextView
+        android:text="Fragment类中写入代码："
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:text=" public static CreateFragment newInstance(String title) {
+        CreateFragment createFragment = new CreateFragment();
+        Bundle bundle = new Bundle();
+        bundle.putString(“title”, title);
+        createFragment.setArguments(bundle);
+        return createFragment;
+        }"
+        android:layout_gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:text="CreateFragment创建调用代码："
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:text=" CreateFragment createFragment = CreateFragment.newInstance(“我是FunctionListActivity给CreateFragment传的参数”);
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+        transaction.add(R.id.ll_container, createFragment);
+        transaction.commitAllowingStateLoss();"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>
