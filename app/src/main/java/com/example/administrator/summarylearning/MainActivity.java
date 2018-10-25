@@ -12,11 +12,14 @@ import com.example.administrator.summarylearning.eventbus.EventBusActivity;
 import com.example.administrator.summarylearning.fragment.FragmentContainer;
 import com.example.administrator.summarylearning.interestlablerecyclerview.ActivityInterestLable;
 import com.example.administrator.summarylearning.interfacecallback.InterfaceCallbackActivity;
+import com.example.administrator.summarylearning.jsbridge.JsBridgeActivity;
 import com.example.administrator.summarylearning.okgo.ActivityOkGo;
 import com.example.administrator.summarylearning.ringvibrateactivity.RingAndVibrateActivity;
 import com.example.administrator.summarylearning.secondarylist.SecondaryListActivity;
 import com.example.administrator.summarylearning.selectpicture.SelectPictureActivity;
 import com.example.administrator.summarylearning.startforresult.StartActivity;
+
+import org.greenrobot.eventbus.Subscribe;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -46,6 +49,8 @@ public class MainActivity extends AppCompatActivity {
     Button btn_vibrate_ring;
     @BindView(R.id.btn_fragment)        //Fragment相关
     Button btn_fragment;
+    @BindView(R.id.btn_jsbridge)
+    Button btn_jsbridge;
 
 
     @Override
@@ -57,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     @OnClick({R.id.btn_eventbus_activity, R.id.btn_start_for_result, R.id.btn_okgo_activity,R.id.btn_lable_activity,R.id.btn_matisse_activity,R.id.btn_callback,R.id.btn_get_phone_info,R.id.btn_expand_list
-    ,R.id.btn_animation,R.id.btn_vibrate_ring,R.id.btn_fragment})
+    ,R.id.btn_animation,R.id.btn_vibrate_ring,R.id.btn_fragment,R.id.btn_jsbridge})
     public void OnClick(View view) {
         switch (view.getId()) {
             case R.id.btn_eventbus_activity:                                                        //eventbus
@@ -88,10 +93,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(this, AnimationActivity.class));             //动画
                 break;
             case R.id.btn_vibrate_ring:
-                startActivity(new Intent(this, RingAndVibrateActivity.class));             //震动响铃
+                startActivity(new Intent(this, RingAndVibrateActivity.class));       //震动响铃
                 break;
             case R.id.btn_fragment:                                                                 //Fragment相关
                 startActivity(new Intent(this, FragmentContainer.class));
+                break;
+            case R.id.btn_jsbridge:                                                                 //JsBridge学习
+                startActivity(new Intent(this, JsBridgeActivity.class));
                 break;
 
             default:

@@ -109,6 +109,20 @@
             android:text="Fragment学习中..."
             android:textAllCaps="false"/>
         <Button
+            android:id="@+id/btn_jsbridge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="JSbridge"
+            android:textAllCaps="false"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="" />
+        <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="" />

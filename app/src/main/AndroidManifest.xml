@@ -41,7 +41,10 @@
         <activity android:name=".fragment.FragmentContainer" />
         <activity android:name=".fragment.FunctionListActivity" />
         <activity android:name=".fragment.backstack_learn.BackStackActivity" />
-        <activity android:name=".fragment.createfragment.CreateFragmentActivity"></activity>
+        <activity android:name=".fragment.createfragment.CreateFragmentActivity" />
+        <activity android:name=".fragment.communicate.Fragment_Activity_communicate" />
+        <activity android:name=".jsbridge.JsBridgeActivity" />
+        <activity android:name=".text.TextActivity"></activity>
     </application>
 
 </manifest>

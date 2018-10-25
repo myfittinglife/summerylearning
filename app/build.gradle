@@ -42,7 +42,9 @@ dependencies {
     implementation 'com.zhihu.android:matisse:0.5.0-alpha4'
     //友盟    看是咋用的
     implementation 'com.umeng.analytics:analytics:latest.integration'
-    //测试
+    //万能适配器     RecyclerView使用（未使用）
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
+    //JsBridge使用2
+    implementation 'com.github.lzyzsd:jsbridge:1.0.4'
 
 }
