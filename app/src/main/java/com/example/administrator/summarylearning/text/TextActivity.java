@@ -26,7 +26,6 @@ public class TextActivity extends AppCompatActivity {
     @BindView(R.id.btn_change)
     Button btnChange;
     private boolean isjsbridgechoosed = true;        //是否选择了jsbridge
-    private int choose; //  0jsbridge 1 webview
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,9 +65,6 @@ public class TextActivity extends AppCompatActivity {
                 return;
             }
         }
-
-
-
         super.onBackPressed();
     }
 }

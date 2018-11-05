@@ -44,7 +44,10 @@
         <activity android:name=".fragment.createfragment.CreateFragmentActivity" />
         <activity android:name=".fragment.communicate.Fragment_Activity_communicate" />
         <activity android:name=".jsbridge.JsBridgeActivity" />
-        <activity android:name=".text.TextActivity"></activity>
+        <activity android:name=".text.TextActivity" />
+        <activity android:name=".text.TextActivity2" />
+        <activity android:name=".littlefeature.LittleFeatureActivity" />
+        <activity android:name=".littlefeature.judgeinstall.JudgeInstallActivity"></activity>
     </application>
 
 </manifest>

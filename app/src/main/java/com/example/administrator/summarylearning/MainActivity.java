@@ -1,8 +1,8 @@
 package com.example.administrator.summarylearning;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -13,13 +13,13 @@ import com.example.administrator.summarylearning.fragment.FragmentContainer;
 import com.example.administrator.summarylearning.interestlablerecyclerview.ActivityInterestLable;
 import com.example.administrator.summarylearning.interfacecallback.InterfaceCallbackActivity;
 import com.example.administrator.summarylearning.jsbridge.JsBridgeActivity;
+import com.example.administrator.summarylearning.littlefeature.LittleFeatureActivity;
 import com.example.administrator.summarylearning.okgo.ActivityOkGo;
 import com.example.administrator.summarylearning.ringvibrateactivity.RingAndVibrateActivity;
 import com.example.administrator.summarylearning.secondarylist.SecondaryListActivity;
 import com.example.administrator.summarylearning.selectpicture.SelectPictureActivity;
 import com.example.administrator.summarylearning.startforresult.StartActivity;
-
-import org.greenrobot.eventbus.Subscribe;
+import com.example.administrator.summarylearning.text.TextActivity2;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -46,11 +46,16 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.btn_animation)
     Button btn_animation;
     @BindView(R.id.btn_vibrate_ring)     //震动
-    Button btn_vibrate_ring;
+            Button btn_vibrate_ring;
     @BindView(R.id.btn_fragment)        //Fragment相关
-    Button btn_fragment;
+            Button btn_fragment;
     @BindView(R.id.btn_jsbridge)
     Button btn_jsbridge;
+
+    @BindView(R.id.btn_text)
+    Button button;
+    @BindView(R.id.btn_little_feature)      //小功能
+    Button btnLittleFeature;
 
 
     @Override
@@ -61,8 +66,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    @OnClick({R.id.btn_eventbus_activity, R.id.btn_start_for_result, R.id.btn_okgo_activity,R.id.btn_lable_activity,R.id.btn_matisse_activity,R.id.btn_callback,R.id.btn_get_phone_info,R.id.btn_expand_list
-    ,R.id.btn_animation,R.id.btn_vibrate_ring,R.id.btn_fragment,R.id.btn_jsbridge})
+    @OnClick({R.id.btn_eventbus_activity, R.id.btn_start_for_result, R.id.btn_okgo_activity, R.id.btn_lable_activity, R.id.btn_matisse_activity, R.id.btn_callback, R.id.btn_get_phone_info, R.id.btn_expand_list
+            , R.id.btn_animation, R.id.btn_vibrate_ring, R.id.btn_fragment, R.id.btn_jsbridge, R.id.btn_text,R.id.btn_little_feature})
     public void OnClick(View view) {
         switch (view.getId()) {
             case R.id.btn_eventbus_activity:                                                        //eventbus
@@ -84,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(this, InterfaceCallbackActivity.class));
                 break;
             case R.id.btn_get_phone_info:                                                           //获取手机信息未实现
-                Toast.makeText(this,"获取手机信息",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "获取手机信息", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btn_expand_list:                                                              //二级列表
                 startActivity(new Intent(this, SecondaryListActivity.class));
@@ -100,6 +105,12 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.btn_jsbridge:                                                                 //JsBridge学习
                 startActivity(new Intent(this, JsBridgeActivity.class));
+                break;
+            case R.id.btn_text:
+                startActivity(new Intent(this, TextActivity2.class));
+                break;
+            case R.id.btn_little_feature:
+                startActivity(new Intent(this, LittleFeatureActivity.class));
                 break;
 
             default:

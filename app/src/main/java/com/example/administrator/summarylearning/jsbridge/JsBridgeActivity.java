@@ -5,13 +5,17 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.webkit.WebSettings;
 import android.widget.Button;
 
 import com.example.administrator.summarylearning.R;
 import com.example.administrator.summarylearning.text.TextActivity;
+import com.github.lzyzsd.jsbridge.BridgeHandler;
 import com.github.lzyzsd.jsbridge.BridgeWebView;
+import com.github.lzyzsd.jsbridge.CallBackFunction;
+import com.github.lzyzsd.jsbridge.WebViewJavascriptBridge;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -30,6 +34,11 @@ public class JsBridgeActivity extends AppCompatActivity {
     Button btnLoadurl;
     @BindView(R.id.btn_goto)
     Button btnGoto;
+
+    private static final String TAG = "JsBridgeActivity_ceshi";
+    
+    
+    
 
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @Override
@@ -84,4 +93,31 @@ public class JsBridgeActivity extends AppCompatActivity {
         }
         super.onBackPressed();
     }
+    //Java中定义方法供JS调用
+    public void fun(){
+        bridgewebview.registerHandler("methodName", new BridgeHandler() {
+            @Override
+            public void handler(String data, CallBackFunction function) {
+                Log.i(TAG, "methodName()"+"从JS返回来的数据为"+data);
+                function.onCallBack("submitFromWeb exe, response data from Java");
+
+            }
+        });
+    }
+    /**
+     * 在JS中调用此方法：
+     WebViewJavascriptBridge.callHandler(
+            'methodName',
+            {'param',str1},
+            function(responseData){
+            document.getElementById("show").innerHTML="send get responseData from java, data = "+reponseData;//返回表格行的开始和结束标签之间的 HTML
+     });
+
+
+
+
+     */
+
+
+
 }

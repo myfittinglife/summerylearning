@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <EditText
+                android:id="@+id/et_packagename"
+                android:hint="输入应用的包名："
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <Button
+                android:id="@+id/btn_judge"
+                android:text="判断"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:text="获取已安装的应用"
+                android:id="@+id/btn_getPackagename"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/tv_installedname"
+                android:text="手机已安装的应用包名："
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorPrimary"/>
+            <TextView
+                android:layout_marginTop="20dp"
+                android:text="常见应用的包名：\n腾讯地图：com.tencent.map\n百度地图：com.baidu.BaiduMap\n高德地图：com.autonavi.minimap\nQQ：com.tencent.mqq\n微信：com.tencent.mm\n新浪微博：com.sina.weibo\n美团外卖： com.sankuai.meituan.takeoutnew\n饿了吗：me.ele"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </ScrollView>
+
+
+
+</LinearLayout>

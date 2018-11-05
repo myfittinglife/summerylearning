@@ -1,5 +1,6 @@
 package com.example.administrator.summarylearning.interfacecallback;
 
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,6 +11,8 @@ import com.example.administrator.summarylearning.R;
 import com.example.administrator.summarylearning.okgo.bean.JsonBean1;
 
 import org.w3c.dom.Text;
+
+import java.util.logging.LogRecord;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -22,6 +25,7 @@ public class InterfaceCallbackActivity extends AppCompatActivity implements OnNe
     @BindView(R.id.tv_message)
     TextView tv_message;
     Model model;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
