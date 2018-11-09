@@ -32,7 +32,7 @@ public class ActivityForResult2 extends AppCompatActivity {
             case R.id.btn_back:
                 Intent intent = new Intent();
                 intent.putExtra("data", et_text.getText().toString().trim());
-                setResult(100, intent);
+                setResult(RESULT_OK, intent);
                 finish();
                 break;
             default:

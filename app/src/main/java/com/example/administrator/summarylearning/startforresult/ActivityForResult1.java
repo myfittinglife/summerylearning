@@ -39,12 +39,12 @@ public class ActivityForResult1 extends AppCompatActivity {
             case R.id.btn_back1:
 //                intent.putExtra("data", et_text1.getText().toString().trim());
                 intent.putExtra("data", true);
-                setResult(100, intent);                     //resultCode用来判断返回结果是否成功
+                setResult(RESULT_OK, intent);                     //resultCode用来判断返回结果是否成功
                 finish();
                 break;
             case R.id.btn_back2:
                 intent.putExtra("data", et_text2.getText().toString().trim());
-                setResult(100, intent);
+                setResult(RESULT_OK, intent);
                 finish();
                 break;
             default:

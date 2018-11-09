@@ -54,7 +54,7 @@ public class StartActivity extends AppCompatActivity {
         String textStr;
         switch (requestCode) {
             case 1:                                         //活动一
-                if(resultCode==100){                                            //resultCode用来判断数据返回是否成功
+                if(resultCode==RESULT_OK){                                            //resultCode用来判断数据返回是否成功
 //                    textStr = data.getStringExtra("data");
                     Boolean a = data.getBooleanExtra("data", false);
                     Log.i("TAG", "onActivityResult: "+a);
@@ -66,7 +66,7 @@ public class StartActivity extends AppCompatActivity {
 
                 break;
             case 2:                                        //活动二
-                if(resultCode==100){
+                if(resultCode==RESULT_OK){
                     textStr = data.getStringExtra("data");
                     tv_content2.setText(textStr);
                 }else {
