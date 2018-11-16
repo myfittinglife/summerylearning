@@ -85,29 +85,15 @@
             android:layout_height="wrap_content"
             android:text="动画学习进行中..." />
         <Button
+            android:id="@+id/btn_mixed_development"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="权限申请工具未做" />
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="recyclerview总结未做"
-            android:textAllCaps="false"/>
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="上拉加载下拉刷新未做" />
+            android:text="混合开发进行中"/>
         <Button
             android:id="@+id/btn_vibrate_ring"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="震动响铃工具类" />
-        <Button
-            android:id="@+id/btn_fragment"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Fragment学习中..."
-            android:textAllCaps="false"/>
         <Button
             android:id="@+id/btn_jsbridge"
             android:layout_width="match_parent"
@@ -115,19 +101,45 @@
             android:text="JSbridge"
             android:textAllCaps="false"/>
         <Button
-            android:id="@+id/btn_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="测试" />
-        <Button
             android:id="@+id/btn_little_feature"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="小功能集合" />
         <Button
+            android:id="@+id/btn_system_setting"
+            android:text="系统设置跳转"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="权限申请工具未做" />
+        <Button
+            android:id="@+id/btn_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="RecyclerView总结..."
+            android:textAllCaps="false"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="上拉加载下拉刷新未做" />
+        <Button
+            android:id="@+id/btn_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fragment学习中..."
+            android:textAllCaps="false"/>
+        <Button
+            android:id="@+id/btn_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="测试" />
+        <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="" />
+
     </LinearLayout>
 
 

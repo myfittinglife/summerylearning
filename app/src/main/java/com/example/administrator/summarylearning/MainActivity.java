@@ -14,11 +14,14 @@ import com.example.administrator.summarylearning.interestlablerecyclerview.Activ
 import com.example.administrator.summarylearning.interfacecallback.InterfaceCallbackActivity;
 import com.example.administrator.summarylearning.jsbridge.JsBridgeActivity;
 import com.example.administrator.summarylearning.littlefeature.LittleFeatureActivity;
+import com.example.administrator.summarylearning.mixdevelopment.MixedDevelopActivity;
 import com.example.administrator.summarylearning.okgo.ActivityOkGo;
+import com.example.administrator.summarylearning.recyclerview.RecyclerViewActivity;
 import com.example.administrator.summarylearning.ringvibrateactivity.RingAndVibrateActivity;
 import com.example.administrator.summarylearning.secondarylist.SecondaryListActivity;
 import com.example.administrator.summarylearning.selectpicture.SelectPictureActivity;
 import com.example.administrator.summarylearning.startforresult.StartActivity;
+import com.example.administrator.summarylearning.systemsetting.SystemSettingActivity;
 import com.example.administrator.summarylearning.text.TextActivity2;
 
 import butterknife.BindView;
@@ -55,7 +58,13 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.btn_text)
     Button button;
     @BindView(R.id.btn_little_feature)      //小功能
-    Button btnLittleFeature;
+            Button btnLittleFeature;
+    @BindView(R.id.btn_mixed_development)   //混合开发
+            Button btnMixedDevelopment;
+    @BindView(R.id.btn_system_setting)      //系统设置
+            Button btnSystemSetting;
+    @BindView(R.id.btn_recyclerview)        //RecyclerView使用
+    Button btnRecyclerview;
 
 
     @Override
@@ -67,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     @OnClick({R.id.btn_eventbus_activity, R.id.btn_start_for_result, R.id.btn_okgo_activity, R.id.btn_lable_activity, R.id.btn_matisse_activity, R.id.btn_callback, R.id.btn_get_phone_info, R.id.btn_expand_list
-            , R.id.btn_animation, R.id.btn_vibrate_ring, R.id.btn_fragment, R.id.btn_jsbridge, R.id.btn_text,R.id.btn_little_feature})
+            , R.id.btn_animation, R.id.btn_vibrate_ring, R.id.btn_fragment, R.id.btn_jsbridge, R.id.btn_text, R.id.btn_little_feature, R.id.btn_mixed_development, R.id.btn_system_setting,R.id.btn_recyclerview})
     public void OnClick(View view) {
         switch (view.getId()) {
             case R.id.btn_eventbus_activity:                                                        //eventbus
@@ -106,11 +115,20 @@ public class MainActivity extends AppCompatActivity {
             case R.id.btn_jsbridge:                                                                 //JsBridge学习
                 startActivity(new Intent(this, JsBridgeActivity.class));
                 break;
+            case R.id.btn_mixed_development:                                                        //混合开发
+                startActivity(new Intent(this, MixedDevelopActivity.class));
+                break;
             case R.id.btn_text:
                 startActivity(new Intent(this, TextActivity2.class));
                 break;
             case R.id.btn_little_feature:
                 startActivity(new Intent(this, LittleFeatureActivity.class));
+                break;
+            case R.id.btn_system_setting:                                                           //系统设置
+                startActivity(new Intent(this, SystemSettingActivity.class));
+                break;
+            case R.id.btn_recyclerview:
+                startActivity(new Intent(this, RecyclerViewActivity.class));                        //RecyclerView使用
                 break;
 
             default:

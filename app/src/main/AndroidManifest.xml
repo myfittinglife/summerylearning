@@ -47,7 +47,11 @@
         <activity android:name=".text.TextActivity" />
         <activity android:name=".text.TextActivity2" />
         <activity android:name=".littlefeature.LittleFeatureActivity" />
-        <activity android:name=".littlefeature.judgeinstall.JudgeInstallActivity"></activity>
+        <activity android:name=".littlefeature.judgeinstall.JudgeInstallActivity" />
+        <activity android:name=".mixdevelopment.MixedDevelopActivity" />
+        <activity android:name=".systemsetting.SystemSettingActivity" />
+        <activity android:name=".recyclerview.RecyclerViewActivity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
