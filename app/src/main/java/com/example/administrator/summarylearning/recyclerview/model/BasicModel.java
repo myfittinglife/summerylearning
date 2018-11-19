@@ -1,17 +1,34 @@
 package com.example.administrator.summarylearning.recyclerview.model;
 
+
 /**
- * 作者    LD
- * 时间    2018/11/16 15:48
- * 描述    数据Bean
- */
+*  @Author      LD
+*  @Time        2018.11.16
+*  @Describe    数据Bean
+*  @Modify
+*/
 public class BasicModel {
 
-    String url;                             //图片地址
-    String title;                           //标题
-    String name;                            //姓名
-    String favorites;                       //点赞
-    String comments;                        //评论
+    /**
+     * 图片地址
+     */
+    String url;
+    /**
+     * 标题
+     */
+    String title;
+    /**
+     * 姓名
+     */
+    String name;
+    /**
+     * 点赞
+     */
+    String favorites;
+    /**
+     * 评论
+     */
+    String comments;
 
 
     public BasicModel(String url, String title, String name, String favorites, String comments) {

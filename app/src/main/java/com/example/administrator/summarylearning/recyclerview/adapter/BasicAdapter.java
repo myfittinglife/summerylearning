@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.administrator.summarylearning.R;
@@ -26,66 +27,84 @@ public class BasicAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
 
     private List<BasicModel> mList;
     private Context context;
+    private onClickDelete listener;
 
-    public BasicAdapter(Context context,List<BasicModel> list) {
+    public BasicAdapter(Context context, List<BasicModel> list, onClickDelete listener) {
         this.context = context;
         mList = list;
+        this.listener = listener;
     }
 
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder( ViewGroup parent, int viewType) {
-
-        if(viewType==R.layout.item_recycle){
-            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_recycle,parent,false);
+    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        if (viewType == R.layout.item_recycle_samll) {
+            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_recycle_samll, parent, false);
             ViewHolderSmall viewHolder = new ViewHolderSmall(view);
             return viewHolder;
-        }else {
-            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_recycle_big,parent,false);
+        } else {
+            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_recycle_big, parent, false);
             ViewHolderBig viewHolder = new ViewHolderBig(view);
             return viewHolder;
         }
-
     }
 
     @Override
     public int getItemViewType(int position) {
-        if(position%4==0){
+        if (position % 4 == 0) {
             return R.layout.item_recycle_big;
-        }else {
-            return R.layout.item_recycle;
+        } else {
+            return R.layout.item_recycle_samll;
         }
     }
 
     @Override
-    public void onBindViewHolder( RecyclerView.ViewHolder viewHolder, int position) {
+    public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, final int position) {
         BasicModel src = mList.get(position);
-        if(position%4==0){
+        if (position % 4 == 0) {
             ViewHolderBig holderBig = (ViewHolderBig) viewHolder;
             Glide.with(context).load(src.getUrl()).into(holderBig.imageViewBig);
             holderBig.titleBig.setText(src.getTitle());
             holderBig.nameBig.setText(src.getName());
             holderBig.favoritesBig.setText(src.getFavorites());
             holderBig.commentsBig.setText(src.getComments());
-        }else {
+            holderBig.slideItem.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Toast.makeText(context, "大布局的删除行为", Toast.LENGTH_SHORT).show();
+                    listener.onDelete(position);
+                }
+            });
+        } else {
             ViewHolderSmall holderSmall = (ViewHolderSmall) viewHolder;
             Glide.with(context).load(src.getUrl()).into(holderSmall.imageView);
             holderSmall.title.setText(src.getTitle());
             holderSmall.name.setText(src.getName());
             holderSmall.favorites.setText(src.getFavorites());
             holderSmall.comments.setText(src.getComments());
+            holderSmall.slideItem.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Toast.makeText(context, "小布局的删除行为", Toast.LENGTH_SHORT).show();
+                    listener.onDelete(position);
+                }
+            });
         }
-
-
     }
+
     @Override
     public int getItemCount() {     //返回item条码的数目
         return mList.size();
     }
 
-    static class ViewHolderSmall extends RecyclerView.ViewHolder{
+
+    public static class ViewHolderSmall extends RecyclerView.ViewHolder {
 
         ImageView imageView;
-        TextView  title,name,favorites,comments;
+        TextView title;
+        TextView name;
+        TextView favorites;
+        TextView comments;
+        public TextView slideItem;
 
 
         public ViewHolderSmall(View itemView) {
@@ -95,13 +114,20 @@ public class BasicAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
             name = itemView.findViewById(R.id.item_name);               //姓名
             favorites = itemView.findViewById(R.id.item_favorites);     //点赞
             comments = itemView.findViewById(R.id.item_comments);       //评论
+            slideItem = itemView.findViewById(R.id.slide_item);         //删除
 
         }
+
     }
-    static class ViewHolderBig extends RecyclerView.ViewHolder{
+
+    public static class ViewHolderBig extends RecyclerView.ViewHolder {
 
         ImageView imageViewBig;
-        TextView  titleBig,nameBig,favoritesBig,commentsBig;
+        TextView titleBig;
+        TextView nameBig;
+        TextView favoritesBig;
+        TextView commentsBig;
+        public TextView slideItem;
 
         public ViewHolderBig(@NonNull View itemView) {
             super(itemView);
@@ -110,9 +136,15 @@ public class BasicAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
             nameBig = itemView.findViewById(R.id.item_big_name);               //姓名
             favoritesBig = itemView.findViewById(R.id.item_big_favorites);     //点赞
             commentsBig = itemView.findViewById(R.id.item_big_comments);       //评论
+            slideItem = itemView.findViewById(R.id.slide_item);         //删除
+
         }
+
     }
 
+    public interface onClickDelete {
+        void onDelete(int positon);
+    }
 
 
 }
