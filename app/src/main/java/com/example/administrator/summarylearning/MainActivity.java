@@ -15,6 +15,7 @@ import com.example.administrator.summarylearning.interfacecallback.InterfaceCall
 import com.example.administrator.summarylearning.jsbridge.JsBridgeActivity;
 import com.example.administrator.summarylearning.littlefeature.LittleFeatureActivity;
 import com.example.administrator.summarylearning.mixdevelopment.MixedDevelopActivity;
+import com.example.administrator.summarylearning.mvpframework.MvpActivity;
 import com.example.administrator.summarylearning.okgo.ActivityOkGo;
 import com.example.administrator.summarylearning.recyclerview.RecyclerViewActivity;
 import com.example.administrator.summarylearning.ringvibrateactivity.RingAndVibrateActivity;
@@ -76,7 +77,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     @OnClick({R.id.btn_eventbus_activity, R.id.btn_start_for_result, R.id.btn_okgo_activity, R.id.btn_lable_activity, R.id.btn_matisse_activity, R.id.btn_callback, R.id.btn_get_phone_info, R.id.btn_expand_list
-            , R.id.btn_animation, R.id.btn_vibrate_ring, R.id.btn_fragment, R.id.btn_jsbridge, R.id.btn_text, R.id.btn_little_feature, R.id.btn_mixed_development, R.id.btn_system_setting,R.id.btn_recyclerview})
+            , R.id.btn_animation, R.id.btn_vibrate_ring, R.id.btn_fragment, R.id.btn_jsbridge, R.id.btn_text, R.id.btn_little_feature, R.id.btn_mixed_development, R.id.btn_system_setting,R.id.btn_recyclerview
+            ,R.id.btn_mvp})
     public void OnClick(View view) {
         switch (view.getId()) {
             case R.id.btn_eventbus_activity:                                                        //eventbus
@@ -130,7 +132,9 @@ public class MainActivity extends AppCompatActivity {
             case R.id.btn_recyclerview:
                 startActivity(new Intent(this, RecyclerViewActivity.class));                        //RecyclerView使用
                 break;
-
+            case R.id.btn_mvp:                                                                      //MVP架构使用
+                startActivity(new Intent(this, MvpActivity.class));
+                break;
             default:
                 break;
         }

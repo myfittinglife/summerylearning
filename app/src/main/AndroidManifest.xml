@@ -50,8 +50,10 @@
         <activity android:name=".littlefeature.judgeinstall.JudgeInstallActivity" />
         <activity android:name=".mixdevelopment.MixedDevelopActivity" />
         <activity android:name=".systemsetting.SystemSettingActivity" />
-        <activity android:name=".recyclerview.RecyclerViewActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".recyclerview.RecyclerViewActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".mvpframework.MvpActivity"></activity>
     </application>
 
 </manifest>
