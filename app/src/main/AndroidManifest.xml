@@ -51,9 +51,11 @@
         <activity android:name=".mixdevelopment.MixedDevelopActivity" />
         <activity android:name=".systemsetting.SystemSettingActivity" />
         <activity
-            android:name=".recyclerview.RecyclerViewActivity"
+            android:name=".recyclerview.SlideRecyclerViewActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".mvpframework.MvpActivity"></activity>
+        <activity android:name=".mvpframework.MvpActivity" />
+        <activity android:name=".recyclerview.RecyclerViewActivity" />
+        <activity android:name=".recyclerview.MultiChoiceActivity"></activity>
     </application>
 
 </manifest>

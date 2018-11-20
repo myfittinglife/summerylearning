@@ -1,4 +1,4 @@
-package com.example.administrator.summarylearning.recyclerview.model;
+package com.example.administrator.summarylearning.recyclerview.bean;
 
 
 /**
@@ -7,7 +7,7 @@ package com.example.administrator.summarylearning.recyclerview.model;
 *  @Describe    数据Bean
 *  @Modify
 */
-public class BasicModel {
+public class BasicBean {
 
     /**
      * 图片地址
@@ -31,7 +31,7 @@ public class BasicModel {
     String comments;
 
 
-    public BasicModel(String url, String title, String name, String favorites, String comments) {
+    public BasicBean(String url, String title, String name, String favorites, String comments) {
         this.url = url;
         this.title = title;
         this.name = name;

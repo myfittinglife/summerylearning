@@ -13,7 +13,7 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.administrator.summarylearning.R;
-import com.example.administrator.summarylearning.recyclerview.model.BasicModel;
+import com.example.administrator.summarylearning.recyclerview.bean.BasicBean;
 
 import java.util.List;
 
@@ -22,28 +22,47 @@ import java.util.List;
  * 时间    2018/11/16 10:39
  * 描述    普通的Adapter
  */
-public class BasicAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class SlideBasicAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
 
-    private List<BasicModel> mList;
+    private List<BasicBean> mList;
     private Context context;
     private onClickDelete listener;
 
-    public BasicAdapter(Context context, List<BasicModel> list, onClickDelete listener) {
+    public SlideBasicAdapter(Context context, List<BasicBean> list, onClickDelete listener) {
         this.context = context;
         mList = list;
         this.listener = listener;
     }
 
+    //创建ViewHolder实例
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, final int viewType) {
         if (viewType == R.layout.item_recycle_samll) {
             View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_recycle_samll, parent, false);
-            ViewHolderSmall viewHolder = new ViewHolderSmall(view);
+            final ViewHolderSmall viewHolder = new ViewHolderSmall(view);
+            viewHolder.slideItem.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Toast.makeText(context, "小布局的删除行为", Toast.LENGTH_SHORT).show();
+                    int position = viewHolder.getAdapterPosition();
+                    listener.onDelete(position);
+                }
+            });
+
+
             return viewHolder;
         } else {
             View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_recycle_big, parent, false);
-            ViewHolderBig viewHolder = new ViewHolderBig(view);
+            final ViewHolderBig viewHolder = new ViewHolderBig(view);
+            viewHolder.slideItem.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Toast.makeText(context, "大布局的删除行为", Toast.LENGTH_SHORT).show();
+                    int position = viewHolder.getAdapterPosition();
+                    listener.onDelete(position);
+                }
+            });
             return viewHolder;
         }
     }
@@ -57,9 +76,10 @@ public class BasicAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         }
     }
 
+    //对子项数据进行赋值
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, final int position) {
-        BasicModel src = mList.get(position);
+        BasicBean src = mList.get(position);
         if (position % 4 == 0) {
             ViewHolderBig holderBig = (ViewHolderBig) viewHolder;
             Glide.with(context).load(src.getUrl()).into(holderBig.imageViewBig);
@@ -67,13 +87,13 @@ public class BasicAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
             holderBig.nameBig.setText(src.getName());
             holderBig.favoritesBig.setText(src.getFavorites());
             holderBig.commentsBig.setText(src.getComments());
-            holderBig.slideItem.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Toast.makeText(context, "大布局的删除行为", Toast.LENGTH_SHORT).show();
-                    listener.onDelete(position);
-                }
-            });
+//            holderBig.slideItem.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    Toast.makeText(context, "大布局的删除行为", Toast.LENGTH_SHORT).show();
+//                    listener.onDelete(position);
+//                }
+//            });
         } else {
             ViewHolderSmall holderSmall = (ViewHolderSmall) viewHolder;
             Glide.with(context).load(src.getUrl()).into(holderSmall.imageView);
@@ -81,13 +101,13 @@ public class BasicAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
             holderSmall.name.setText(src.getName());
             holderSmall.favorites.setText(src.getFavorites());
             holderSmall.comments.setText(src.getComments());
-            holderSmall.slideItem.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Toast.makeText(context, "小布局的删除行为", Toast.LENGTH_SHORT).show();
-                    listener.onDelete(position);
-                }
-            });
+//            holderSmall.slideItem.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    Toast.makeText(context, "小布局的删除行为", Toast.LENGTH_SHORT).show();
+//                    listener.onDelete(position);
+//                }
+//            });
         }
     }
 

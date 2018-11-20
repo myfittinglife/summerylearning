@@ -18,6 +18,7 @@ import com.example.administrator.summarylearning.mixdevelopment.MixedDevelopActi
 import com.example.administrator.summarylearning.mvpframework.MvpActivity;
 import com.example.administrator.summarylearning.okgo.ActivityOkGo;
 import com.example.administrator.summarylearning.recyclerview.RecyclerViewActivity;
+import com.example.administrator.summarylearning.recyclerview.SlideRecyclerViewActivity;
 import com.example.administrator.summarylearning.ringvibrateactivity.RingAndVibrateActivity;
 import com.example.administrator.summarylearning.secondarylist.SecondaryListActivity;
 import com.example.administrator.summarylearning.selectpicture.SelectPictureActivity;
