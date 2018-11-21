@@ -14,11 +14,11 @@ import com.example.administrator.summarylearning.interestlablerecyclerview.Activ
 import com.example.administrator.summarylearning.interfacecallback.InterfaceCallbackActivity;
 import com.example.administrator.summarylearning.jsbridge.JsBridgeActivity;
 import com.example.administrator.summarylearning.littlefeature.LittleFeatureActivity;
+import com.example.administrator.summarylearning.materialdesign.MaterialDesignActivity;
 import com.example.administrator.summarylearning.mixdevelopment.MixedDevelopActivity;
 import com.example.administrator.summarylearning.mvpframework.MvpActivity;
 import com.example.administrator.summarylearning.okgo.ActivityOkGo;
 import com.example.administrator.summarylearning.recyclerview.RecyclerViewActivity;
-import com.example.administrator.summarylearning.recyclerview.SlideRecyclerViewActivity;
 import com.example.administrator.summarylearning.ringvibrateactivity.RingAndVibrateActivity;
 import com.example.administrator.summarylearning.secondarylist.SecondaryListActivity;
 import com.example.administrator.summarylearning.selectpicture.SelectPictureActivity;
@@ -30,6 +30,12 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+/**
+*  @Author      LD
+*  @Time
+*  @Describe    主页面，各个按钮汇总
+*  @Modify
+*/
 public class MainActivity extends AppCompatActivity {
 
     @BindView(R.id.btn_eventbus_activity)
@@ -66,7 +72,9 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.btn_system_setting)      //系统设置
             Button btnSystemSetting;
     @BindView(R.id.btn_recyclerview)        //RecyclerView使用
-    Button btnRecyclerview;
+            Button btnRecyclerview;
+    @BindView(R.id.btn_materialdedign)
+    Button btnMaterialdedign;
 
 
     @Override
@@ -78,8 +86,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     @OnClick({R.id.btn_eventbus_activity, R.id.btn_start_for_result, R.id.btn_okgo_activity, R.id.btn_lable_activity, R.id.btn_matisse_activity, R.id.btn_callback, R.id.btn_get_phone_info, R.id.btn_expand_list
-            , R.id.btn_animation, R.id.btn_vibrate_ring, R.id.btn_fragment, R.id.btn_jsbridge, R.id.btn_text, R.id.btn_little_feature, R.id.btn_mixed_development, R.id.btn_system_setting,R.id.btn_recyclerview
-            ,R.id.btn_mvp})
+            , R.id.btn_animation, R.id.btn_vibrate_ring, R.id.btn_fragment, R.id.btn_jsbridge, R.id.btn_text, R.id.btn_little_feature, R.id.btn_mixed_development, R.id.btn_system_setting, R.id.btn_recyclerview
+            , R.id.btn_mvp,R.id.btn_materialdedign})
     public void OnClick(View view) {
         switch (view.getId()) {
             case R.id.btn_eventbus_activity:                                                        //eventbus
@@ -136,6 +144,8 @@ public class MainActivity extends AppCompatActivity {
             case R.id.btn_mvp:                                                                      //MVP架构使用
                 startActivity(new Intent(this, MvpActivity.class));
                 break;
+            case R.id.btn_materialdedign:
+                startActivity(new Intent(this, MaterialDesignActivity.class));
             default:
                 break;
         }

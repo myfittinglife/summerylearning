@@ -13,7 +13,7 @@
     <application
         android:name=".ProjectApp"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/app_icon"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
@@ -55,7 +55,8 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".mvpframework.MvpActivity" />
         <activity android:name=".recyclerview.RecyclerViewActivity" />
-        <activity android:name=".recyclerview.MultiChoiceActivity"></activity>
+        <activity android:name=".recyclerview.MultiChoiceActivity" />
+        <activity android:name=".materialdesign.MaterialDesignActivity"></activity>
     </application>
 
 </manifest>
