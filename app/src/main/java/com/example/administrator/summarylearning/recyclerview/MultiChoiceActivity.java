@@ -79,7 +79,7 @@ public class MultiChoiceActivity extends AppCompatActivity implements BaseQuickA
         }
     }
 
-    //点击事件
+    //item的点击事件
     @Override
     public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
         RadioButton radioButton = view.findViewById(R.id.rb_choice);

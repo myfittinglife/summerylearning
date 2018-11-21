@@ -15,12 +15,12 @@ import java.util.List;
 /**
  * @Author        LD
  * @Time          2018/11/20 10:48
- * @Describe      list选择item,BaseQuickAdapter使用
+ * @Describe      list选择item,BaseQuickAdapter使用     (待补充：使用BasicQuickAdapter实现多布局)
  * @Modify
  */
 public class MultiBasicQuickAdapter extends BaseQuickAdapter<MultiBaseBean,BaseViewHolder> {
 
-    private List<MultiBaseBean> choosedList;
+    private List<MultiBaseBean> choosedList;//没用到
 
 
     public MultiBasicQuickAdapter(int layoutResId,  List<MultiBaseBean> data) {
