@@ -19,7 +19,9 @@ import com.example.administrator.summarylearning.mixdevelopment.MixedDevelopActi
 import com.example.administrator.summarylearning.mvpframework.MvpActivity;
 import com.example.administrator.summarylearning.okgo.ActivityOkGo;
 import com.example.administrator.summarylearning.recyclerview.RecyclerViewActivity;
+import com.example.administrator.summarylearning.retrofit.RetrofitActivity;
 import com.example.administrator.summarylearning.ringvibrateactivity.RingAndVibrateActivity;
+import com.example.administrator.summarylearning.rxjava.RxJavaActivity;
 import com.example.administrator.summarylearning.secondarylist.SecondaryListActivity;
 import com.example.administrator.summarylearning.selectpicture.SelectPictureActivity;
 import com.example.administrator.summarylearning.startforresult.StartActivity;
@@ -31,11 +33,11 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 /**
-*  @Author      LD
-*  @Time
-*  @Describe    主页面，各个按钮汇总
-*  @Modify
-*/
+ * @Author LD
+ * @Time
+ * @Describe 主页面，各个按钮汇总
+ * @Modify
+ */
 public class MainActivity extends AppCompatActivity {
 
     @BindView(R.id.btn_eventbus_activity)
@@ -75,6 +77,12 @@ public class MainActivity extends AppCompatActivity {
             Button btnRecyclerview;
     @BindView(R.id.btn_materialdedign)
     Button btnMaterialdedign;
+    @BindView(R.id.btn_mvp)                 //MVP架构使用
+    Button btn_mvp;
+    @BindView(R.id.btn_rxjava)              //RxJava使用
+    Button btnRxjava;
+    @BindView(R.id.btn_retrofit)
+    Button btnRetrofit;
 
 
     @Override
@@ -87,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick({R.id.btn_eventbus_activity, R.id.btn_start_for_result, R.id.btn_okgo_activity, R.id.btn_lable_activity, R.id.btn_matisse_activity, R.id.btn_callback, R.id.btn_get_phone_info, R.id.btn_expand_list
             , R.id.btn_animation, R.id.btn_vibrate_ring, R.id.btn_fragment, R.id.btn_jsbridge, R.id.btn_text, R.id.btn_little_feature, R.id.btn_mixed_development, R.id.btn_system_setting, R.id.btn_recyclerview
-            , R.id.btn_mvp,R.id.btn_materialdedign})
+            , R.id.btn_mvp, R.id.btn_materialdedign,R.id.btn_rxjava,R.id.btn_retrofit})
     public void OnClick(View view) {
         switch (view.getId()) {
             case R.id.btn_eventbus_activity:                                                        //eventbus
@@ -115,10 +123,10 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(this, SecondaryListActivity.class));
                 break;
             case R.id.btn_animation:
-                startActivity(new Intent(this, AnimationActivity.class));             //动画
+                startActivity(new Intent(this, AnimationActivity.class));                           //动画
                 break;
             case R.id.btn_vibrate_ring:
-                startActivity(new Intent(this, RingAndVibrateActivity.class));       //震动响铃
+                startActivity(new Intent(this, RingAndVibrateActivity.class));                      //震动响铃
                 break;
             case R.id.btn_fragment:                                                                 //Fragment相关
                 startActivity(new Intent(this, FragmentContainer.class));
@@ -146,6 +154,12 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.btn_materialdedign:
                 startActivity(new Intent(this, MaterialDesignActivity.class));
+            case R.id.btn_rxjava:                                                                   //RxJava使用
+                startActivity(new Intent(this, RxJavaActivity.class));
+                break;
+            case R.id.btn_retrofit:                                                                 //Retrofit使用
+                startActivity(new Intent(this, RetrofitActivity.class));
+                break;
             default:
                 break;
         }

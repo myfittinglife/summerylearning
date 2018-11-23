@@ -56,7 +56,9 @@
         <activity android:name=".mvpframework.MvpActivity" />
         <activity android:name=".recyclerview.RecyclerViewActivity" />
         <activity android:name=".recyclerview.MultiChoiceActivity" />
-        <activity android:name=".materialdesign.MaterialDesignActivity"></activity>
+        <activity android:name=".materialdesign.MaterialDesignActivity" />
+        <activity android:name=".rxjava.RxJavaActivity" />
+        <activity android:name=".retrofit.RetrofitActivity"></activity>
     </application>
 
 </manifest>

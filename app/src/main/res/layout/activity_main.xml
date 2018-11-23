@@ -113,6 +113,18 @@
             android:layout_height="wrap_content"
             android:text="MaterialDesign..."
             android:textAllCaps="false"/>
+        <Button
+            android:id="@+id/btn_rxjava"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="RxJava..."
+            android:textAllCaps="false"/>
+        <Button
+            android:id="@+id/btn_retrofit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Retrofit..."
+            android:textAllCaps="false"/>
         <View
             android:layout_width="match_parent"
             android:layout_height="3dp"
