@@ -161,7 +161,7 @@ public class MaterialDesignActivity extends AppCompatActivity {
 //    }
 
 
-    @OnClick({R.id.iv_headicon, R.id.ll_add,R.id.btn_fab})
+    @OnClick({R.id.iv_headicon, R.id.ll_add, R.id.btn_fab})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.iv_headicon:
@@ -171,8 +171,9 @@ public class MaterialDesignActivity extends AppCompatActivity {
                 ToastUtil("添加");
                 break;
             case R.id.btn_fab:
-//                ToastUtil("悬浮按钮");
                 SnackbarToast(view);
+                break;
+            default:
                 break;
         }
     }
@@ -181,11 +182,16 @@ public class MaterialDesignActivity extends AppCompatActivity {
     public void ToastUtil(String text) {
         Toast.makeText(getApplicationContext(), text, Toast.LENGTH_SHORT).show();
     }
-    public void SnackbarToast(View view){
-        Snackbar.make(view,"Data Deleted",Snackbar.LENGTH_SHORT).setAction("Undo", new View.OnClickListener() {     //传入view是为了让coordinatorlayout监听到其子控件FloatingActionButton的行为
+
+    /**
+     * Snackbar形式的Toast使用
+     * @param view
+     */
+    public void SnackbarToast(View view) {
+        Snackbar.make(view, "Data Deleted", Snackbar.LENGTH_SHORT).setAction("Undo", new View.OnClickListener() {     //传入view是为了让coordinatorlayout监听到其子控件FloatingActionButton的行为
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(),"撤回",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "撤回", Toast.LENGTH_SHORT).show();
             }
         }).show();
     }
