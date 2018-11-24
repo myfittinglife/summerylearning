@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".notification.NotificationActivity">
+    <Button
+        android:id="@+id/btn_send5"
+        android:text="发送消息(等级5)"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/btn_sendmessage"
+        android:text="发送聊天消息（等级4）"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/btn_send5"/>
+    <Button
+        android:id="@+id/btn_subscribe"
+        android:text="发送订阅消息（等级3）"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/btn_sendmessage"/>
+    <Button
+        android:id="@+id/btn_newmessage"
+        android:text="发送新闻资讯（等级2）"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/btn_subscribe"/>
+    <Button
+        android:id="@+id/btn_send1"
+        android:text="发送消息（等级1）"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/btn_newmessage"/>
+    <Button
+        android:id="@+id/btn_send0"
+        android:text="发送消息（等级0）"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/btn_send1"/>
+
+
+
+</android.support.constraint.ConstraintLayout>
