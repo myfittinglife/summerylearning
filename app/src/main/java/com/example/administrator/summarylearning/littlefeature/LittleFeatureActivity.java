@@ -8,6 +8,7 @@ import android.widget.Button;
 
 import com.example.administrator.summarylearning.R;
 import com.example.administrator.summarylearning.littlefeature.judgeinstall.JudgeInstallActivity;
+import com.example.administrator.summarylearning.littlefeature.judgenetworkstatus.JudgeNetstatusActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -21,7 +22,9 @@ import butterknife.OnClick;
 public class LittleFeatureActivity extends AppCompatActivity {
 
     @BindView(R.id.btn_judgeinstall)        //判断是否安装某应用
-    Button btnJudgeinstall;
+            Button btnJudgeinstall;
+    @BindView(R.id.btn_judgenetstatus)
+    Button btnJudgenetstatus;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,11 +33,15 @@ public class LittleFeatureActivity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick(R.id.btn_judgeinstall)
+    @OnClick({R.id.btn_judgeinstall, R.id.btn_judgenetstatus})
     public void onViewClicked(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.btn_judgeinstall:     //判断是否安装某应用
-                startActivity(new Intent(this,JudgeInstallActivity.class));
+                startActivity(new Intent(this, JudgeInstallActivity.class));
+                break;
+            case R.id.btn_judgenetstatus:      //判断网络状态
+                startActivity(new Intent(this, JudgeNetstatusActivity.class));
+            default:
                 break;
         }
     }
