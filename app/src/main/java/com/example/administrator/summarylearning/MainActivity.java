@@ -17,6 +17,7 @@ import com.example.administrator.summarylearning.littlefeature.LittleFeatureActi
 import com.example.administrator.summarylearning.materialdesign.MaterialDesignActivity;
 import com.example.administrator.summarylearning.mixdevelopment.MixedDevelopActivity;
 import com.example.administrator.summarylearning.mvpframework.MvpActivity;
+import com.example.administrator.summarylearning.notification.NotificationActivity;
 import com.example.administrator.summarylearning.okgo.ActivityOkGo;
 import com.example.administrator.summarylearning.recyclerview.RecyclerViewActivity;
 import com.example.administrator.summarylearning.retrofit.RetrofitActivity;
@@ -81,9 +82,10 @@ public class MainActivity extends AppCompatActivity {
     Button btn_mvp;
     @BindView(R.id.btn_rxjava)              //RxJava使用
     Button btnRxjava;
-    @BindView(R.id.btn_retrofit)
+    @BindView(R.id.btn_retrofit)            //retrofit使用
     Button btnRetrofit;
-
+    @BindView(R.id.btn_notification)        //通知
+    Button btnNotification;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick({R.id.btn_eventbus_activity, R.id.btn_start_for_result, R.id.btn_okgo_activity, R.id.btn_lable_activity, R.id.btn_matisse_activity, R.id.btn_callback, R.id.btn_get_phone_info, R.id.btn_expand_list
             , R.id.btn_animation, R.id.btn_vibrate_ring, R.id.btn_fragment, R.id.btn_jsbridge, R.id.btn_text, R.id.btn_little_feature, R.id.btn_mixed_development, R.id.btn_system_setting, R.id.btn_recyclerview
-            , R.id.btn_mvp, R.id.btn_materialdedign,R.id.btn_rxjava,R.id.btn_retrofit})
+            , R.id.btn_mvp, R.id.btn_materialdedign,R.id.btn_rxjava,R.id.btn_retrofit,R.id.btn_notification})
     public void OnClick(View view) {
         switch (view.getId()) {
             case R.id.btn_eventbus_activity:                                                        //eventbus
@@ -160,6 +162,10 @@ public class MainActivity extends AppCompatActivity {
             case R.id.btn_retrofit:                                                                 //Retrofit使用
                 startActivity(new Intent(this, RetrofitActivity.class));
                 break;
+            case R.id.btn_notification:
+                startActivity(new Intent(this, NotificationActivity.class));
+                break;
+
             default:
                 break;
         }
