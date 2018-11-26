@@ -1,6 +1,10 @@
 package com.example.administrator.summarylearning;
 
 import android.app.Application;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.cache.CacheEntity;
@@ -19,6 +23,9 @@ public class ProjectApp extends Application {
     public void onCreate() {
         super.onCreate();
         initOKGO();
+        if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.O){
+            initChannel();
+        }
     }
 
     private void initOKGO() {
@@ -43,5 +50,20 @@ public class ProjectApp extends Application {
 //                .addCommonHeaders();                           //可添加公共头部分
 
     }
+
+    //通知渠道的建立
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    private void initChannel(){
+        String channelId = "download";                                                              //渠道ID
+        String channelName = "下载消息";                                                            //渠道名称
+        int importance = NotificationManager.IMPORTANCE_LOW;                                        //若为IMPORTANCE_HIGH会导致一直震动和响铃
+        NotificationChannel channel = new NotificationChannel(channelId, channelName, importance);
+        channel.setShowBadge(true);      //允许该通知渠道下的通知显示角标
+        channel.enableVibration(false);
+        NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        notificationManager.createNotificationChannel(channel);
+
+    }
+
 
 }

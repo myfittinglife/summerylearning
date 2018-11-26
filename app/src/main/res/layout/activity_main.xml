@@ -131,6 +131,12 @@
             android:layout_height="wrap_content"
             android:text="Notification通知..."
             android:textAllCaps="false"/>
+        <Button
+            android:id="@+id/btn_service"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Service学习"
+            android:textAllCaps="false"/>
         <View
             android:layout_width="match_parent"
             android:layout_height="3dp"

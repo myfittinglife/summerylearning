@@ -25,6 +25,7 @@ import com.example.administrator.summarylearning.ringvibrateactivity.RingAndVibr
 import com.example.administrator.summarylearning.rxjava.RxJavaActivity;
 import com.example.administrator.summarylearning.secondarylist.SecondaryListActivity;
 import com.example.administrator.summarylearning.selectpicture.SelectPictureActivity;
+import com.example.administrator.summarylearning.service.ServiceActivity;
 import com.example.administrator.summarylearning.startforresult.StartActivity;
 import com.example.administrator.summarylearning.systemsetting.SystemSettingActivity;
 import com.example.administrator.summarylearning.text.TextActivity2;
@@ -76,16 +77,18 @@ public class MainActivity extends AppCompatActivity {
             Button btnSystemSetting;
     @BindView(R.id.btn_recyclerview)        //RecyclerView使用
             Button btnRecyclerview;
-    @BindView(R.id.btn_materialdedign)
+    @BindView(R.id.btn_materialdedign)      //materialdesign
     Button btnMaterialdedign;
     @BindView(R.id.btn_mvp)                 //MVP架构使用
-    Button btn_mvp;
+            Button btn_mvp;
     @BindView(R.id.btn_rxjava)              //RxJava使用
-    Button btnRxjava;
+            Button btnRxjava;
     @BindView(R.id.btn_retrofit)            //retrofit使用
-    Button btnRetrofit;
+            Button btnRetrofit;
     @BindView(R.id.btn_notification)        //通知
-    Button btnNotification;
+            Button btnNotification;
+    @BindView(R.id.btn_service)     //service下载服务
+    Button btnService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick({R.id.btn_eventbus_activity, R.id.btn_start_for_result, R.id.btn_okgo_activity, R.id.btn_lable_activity, R.id.btn_matisse_activity, R.id.btn_callback, R.id.btn_get_phone_info, R.id.btn_expand_list
             , R.id.btn_animation, R.id.btn_vibrate_ring, R.id.btn_fragment, R.id.btn_jsbridge, R.id.btn_text, R.id.btn_little_feature, R.id.btn_mixed_development, R.id.btn_system_setting, R.id.btn_recyclerview
-            , R.id.btn_mvp, R.id.btn_materialdedign,R.id.btn_rxjava,R.id.btn_retrofit,R.id.btn_notification})
+            , R.id.btn_mvp, R.id.btn_materialdedign, R.id.btn_rxjava, R.id.btn_retrofit, R.id.btn_notification,R.id.btn_service})
     public void OnClick(View view) {
         switch (view.getId()) {
             case R.id.btn_eventbus_activity:                                                        //eventbus
@@ -143,7 +146,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(this, TextActivity2.class));
                 break;
             case R.id.btn_little_feature:
-                startActivity(new Intent(this, LittleFeatureActivity.class));
+                startActivity(new Intent(this, LittleFeatureActivity.class));                       //小功能集合
                 break;
             case R.id.btn_system_setting:                                                           //系统设置
                 startActivity(new Intent(this, SystemSettingActivity.class));
@@ -154,16 +157,20 @@ public class MainActivity extends AppCompatActivity {
             case R.id.btn_mvp:                                                                      //MVP架构使用
                 startActivity(new Intent(this, MvpActivity.class));
                 break;
-            case R.id.btn_materialdedign:
+            case R.id.btn_materialdedign:                                                           //MaterialDesign
                 startActivity(new Intent(this, MaterialDesignActivity.class));
+                break;
             case R.id.btn_rxjava:                                                                   //RxJava使用
                 startActivity(new Intent(this, RxJavaActivity.class));
                 break;
             case R.id.btn_retrofit:                                                                 //Retrofit使用
                 startActivity(new Intent(this, RetrofitActivity.class));
                 break;
-            case R.id.btn_notification:
+            case R.id.btn_notification:                                                             //通知使用
                 startActivity(new Intent(this, NotificationActivity.class));
+                break;
+            case R.id.btn_service:
+                startActivity(new Intent(this, ServiceActivity.class));                             //Service服务的使用
                 break;
 
             default:

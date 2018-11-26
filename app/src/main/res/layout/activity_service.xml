@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".service.ServiceActivity">
+    <Button
+        android:id="@+id/btn_startservice"
+        android:text="开启服务"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/btn_stopservice"
+        android:text="停止服务"
+        android:layout_width= "match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/btn_startservice"/>
+    <Button
+        android:id="@+id/btn_bindservice"
+        android:text="绑定服务"
+        android:layout_width= "match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/btn_stopservice"/>
+    <Button
+        android:id="@+id/btn_unbindservice"
+        android:text="解绑服务"
+        android:layout_width= "match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/btn_bindservice"/>
+    <Button
+        android:id="@+id/btn_startintentservice"
+        android:text="开启IntentService服务"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/btn_unbindservice"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/btn_download_activity"
+        android:text="下载活动"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/btn_startintentservice"/>
+
+</android.support.constraint.ConstraintLayout>
