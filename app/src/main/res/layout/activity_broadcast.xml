@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".broadcastreceiver.BroadcastActivity">
+    <Button
+        android:id="@+id/btn_register_network"
+        android:text="注册网络状态监听器"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/btn_sendstandbroadcast"
+        android:text="发送标准广播"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/btn_register_network"/>
+    <Button
+        android:id="@+id/btn_sendorderbroadcast"
+        android:text="发送有序广播"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/btn_sendstandbroadcast"/>
+    <Button
+        android:id="@+id/btn_localbroadcast"
+        android:text="本地广播"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/btn_sendorderbroadcast"/>
+
+</android.support.constraint.ConstraintLayout>

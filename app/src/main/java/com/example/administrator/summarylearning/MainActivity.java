@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.administrator.summarylearning.animation.AnimationActivity;
+import com.example.administrator.summarylearning.broadcastreceiver.BroadcastActivity;
+import com.example.administrator.summarylearning.downloadmanager.DownloadManagerActivity;
 import com.example.administrator.summarylearning.eventbus.EventBusActivity;
 import com.example.administrator.summarylearning.fragment.FragmentContainer;
 import com.example.administrator.summarylearning.interestlablerecyclerview.ActivityInterestLable;
@@ -78,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.btn_recyclerview)        //RecyclerView使用
             Button btnRecyclerview;
     @BindView(R.id.btn_materialdedign)      //materialdesign
-    Button btnMaterialdedign;
+            Button btnMaterialdedign;
     @BindView(R.id.btn_mvp)                 //MVP架构使用
             Button btn_mvp;
     @BindView(R.id.btn_rxjava)              //RxJava使用
@@ -87,8 +89,12 @@ public class MainActivity extends AppCompatActivity {
             Button btnRetrofit;
     @BindView(R.id.btn_notification)        //通知
             Button btnNotification;
-    @BindView(R.id.btn_service)     //service下载服务
-    Button btnService;
+    @BindView(R.id.btn_service)             //service下载服务
+            Button btnService;
+    @BindView(R.id.btn_downloadmanager)     //系统下载管理器
+    Button btnDownloadmanager;
+    @BindView(R.id.btn_broadcast)           //广播接收器
+    Button btnBroadcast;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick({R.id.btn_eventbus_activity, R.id.btn_start_for_result, R.id.btn_okgo_activity, R.id.btn_lable_activity, R.id.btn_matisse_activity, R.id.btn_callback, R.id.btn_get_phone_info, R.id.btn_expand_list
             , R.id.btn_animation, R.id.btn_vibrate_ring, R.id.btn_fragment, R.id.btn_jsbridge, R.id.btn_text, R.id.btn_little_feature, R.id.btn_mixed_development, R.id.btn_system_setting, R.id.btn_recyclerview
-            , R.id.btn_mvp, R.id.btn_materialdedign, R.id.btn_rxjava, R.id.btn_retrofit, R.id.btn_notification,R.id.btn_service})
+            , R.id.btn_mvp, R.id.btn_materialdedign, R.id.btn_rxjava, R.id.btn_retrofit, R.id.btn_notification, R.id.btn_service,R.id.btn_downloadmanager,R.id.btn_broadcast})
     public void OnClick(View view) {
         switch (view.getId()) {
             case R.id.btn_eventbus_activity:                                                        //eventbus
@@ -172,7 +178,12 @@ public class MainActivity extends AppCompatActivity {
             case R.id.btn_service:
                 startActivity(new Intent(this, ServiceActivity.class));                             //Service服务的使用
                 break;
-
+            case R.id.btn_downloadmanager:                                                          //系统下载管理器
+                startActivity(new Intent(this, DownloadManagerActivity.class));
+                break;
+            case R.id.btn_broadcast:                                                                //广播接收器
+                startActivity(new Intent(this, BroadcastActivity.class));
+                break;
             default:
                 break;
         }

@@ -60,6 +60,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="震动响铃工具类" />
+        <Button
+            android:id="@+id/btn_downloadmanager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="DownloadManager系统下载管理器"
+            android:textAllCaps="false"/>
         <View
             android:layout_width="match_parent"
             android:layout_height="3dp"
@@ -135,8 +141,14 @@
             android:id="@+id/btn_service"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Service学习"
+            android:text="Service学习..."
             android:textAllCaps="false"/>
+        <Button
+            android:id="@+id/btn_broadcast"
+            android:text="广播接收器..."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
         <View
             android:layout_width="match_parent"
             android:layout_height="3dp"

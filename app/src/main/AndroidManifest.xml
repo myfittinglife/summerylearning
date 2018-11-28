@@ -9,6 +9,8 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.CAMERA" />
+    <!-- 读取开机启动广播权限 -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application
         android:name=".ProjectApp"
@@ -78,7 +80,37 @@
             android:enabled="true"
             android:exported="true" />
 
-        <activity android:name=".service.downservice.DownloadActivity"></activity>
+        <activity android:name=".service.downservice.DownloadActivity" />
+        <activity android:name=".downloadmanager.DownloadManagerActivity" />
+        <!-- <receiver android:name=".downloadmanager.DownloadReceiver" -->
+        <!-- android:enabled="true" -->
+        <!-- android:exported="true"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="android.intent.action.ACTION_DOWNLOAD_COMPLETE"/> -->
+        <!-- <action android:name="android.intent.action.ACTION_NOTIFICATION_CLICKED"/> -->
+        <!-- </intent-filter> -->
+        <!-- </receiver> -->
+
+        <activity android:name=".broadcastreceiver.BroadcastActivity" />
+
+        <!-- 开机的静态监听器 -->
+        <receiver
+            android:name=".broadcastreceiver.BootCompleteReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <!-- 标准广播监听器 -->
+        <receiver
+            android:name=".broadcastreceiver.MyBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.example.broadcasttext.MY_BROADCAST" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
