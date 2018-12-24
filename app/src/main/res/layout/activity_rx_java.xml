@@ -1,9 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".rxjava.RxJavaActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_common"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="普通方式注册" />
+
+            <Button
+                android:id="@+id/btn_chain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="链式调用" />
+
+            <Button
+                android:id="@+id/btn_coumser"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="上下游同一线程且使用Coumser"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btn_dispose"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="dispose()阻断使用"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btn_switchthread"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="转化线程使用" />
+
+            <Button
+                android:id="@+id/btn_rxjava_retrofit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Retrofit和Rxjava连用" />
+
+            <Button
+                android:id="@+id/btn_getinfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Rxjava和Retrofit嵌套请求"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btn_zip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Zip操作符使用"
+                android:textAllCaps="false" />
+            <Button
+                android:id="@+id/btn_net_zip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Zip操作符网络操作"
+                android:textAllCaps="false"/>
+            <Button
+                android:id="@+id/btn_net_zip_fail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Zip操作符网络操作失败"
+                android:textAllCaps="false"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

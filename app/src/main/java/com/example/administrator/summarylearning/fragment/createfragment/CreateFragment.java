@@ -7,7 +7,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.administrator.summarylearning.ProjectApp;
 import com.example.administrator.summarylearning.R;
+import com.squareup.leakcanary.RefWatcher;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -47,5 +49,13 @@ public class CreateFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         unbinder.unbind();
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        //检测内存泄漏
+        RefWatcher refWatcher = ProjectApp.getRefWatcher(getActivity());
+        refWatcher.watch(this);
     }
 }

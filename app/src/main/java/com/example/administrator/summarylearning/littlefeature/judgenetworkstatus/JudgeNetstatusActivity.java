@@ -68,6 +68,7 @@ public class JudgeNetstatusActivity extends AppCompatActivity {
 
     //判断网络是否链接
     public boolean isConnected(Context context){
+        //connectivitymanager系统服务类，专门用来管理网络连接
         ConnectivityManager manager = (ConnectivityManager) context.getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
         if(manager==null){
             return false;

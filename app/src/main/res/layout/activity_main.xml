@@ -66,6 +66,31 @@
             android:layout_height="wrap_content"
             android:text="DownloadManager系统下载管理器"
             android:textAllCaps="false"/>
+        <Button
+            android:id="@+id/btn_banner"
+            android:text="轮播功能(多看封装解耦思想)"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/btn_refreshAndload"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="上拉加载下拉刷新" />
+        <Button
+            android:id="@+id/btn_clear_cache"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="清除缓存" />
+        <Button
+            android:id="@+id/btn_pulldown_menu"
+            android:text="下拉菜单"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/btn_pdf"
+            android:text="PDF文件查看"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
         <View
             android:layout_width="match_parent"
             android:layout_height="3dp"
@@ -149,10 +174,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
+        <Button
+            android:id="@+id/btn_common_viewpager"
+            android:text="通用的ViewPager"
+            android:textAllCaps="false"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
         <View
             android:layout_width="match_parent"
             android:layout_height="3dp"
             android:background="@color/colorPrimary"/>
+        <Button
+            android:id="@+id/btn_comment"
+            android:text="评论功能"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -180,31 +217,62 @@
             android:text="JSbridge"
             android:textAllCaps="false"/>
         <Button
+            android:id="@+id/btn_permission"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="权限申请工具未做" />
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="上拉加载下拉刷新未做" />
+
         <Button
             android:id="@+id/btn_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="测试" />
         <Button
+            android:id="@+id/btn_third_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="" />
+            android:text="第三方登录" />
         <Button
+            android:id="@+id/btn_third_share"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="" />
+            android:text="第三方分享" />
         <Button
+            android:id="@+id/btn_viewpager"
+            android:text="viewpager+tablelayout+fragment"
+            android:textAllCaps="false"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="" />
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/btn_videoplayer"
+            android:text="视频播放"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:text="城市列表选择"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/btn_hanzi_transform"
+            android:text="汉字转繁体和拼音"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <Button
+            android:text=""
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <Button
+            android:text=""
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <Button
+            android:text=""
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
 
     </LinearLayout>
 

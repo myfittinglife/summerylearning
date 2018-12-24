@@ -13,6 +13,9 @@ public class DataBean {
     private String Time;            //时间
     private String content;         //内容
 
+    public DataBean() {
+    }
+
     @Override
     public String toString() {
         return "DataBean{" +

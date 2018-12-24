@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".thirdshare.ShareActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="vertical">
+           <Button
+               android:id="@+id/btn_share_friend"
+               android:text="分享给朋友"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content" />
+           <Button
+               android:id="@+id/btn_share_circle"
+               android:text="分享至朋友圈"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content" />
+           <Button
+               android:id="@+id/btn_share_music_circle"
+               android:text="分享音乐至朋友圈"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content" />
+           <Button
+               android:id="@+id/btn_share_music_friend"
+               android:text="分享音乐给朋友"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content" />
+           <Button
+               android:id="@+id/btn_share_web_circle"
+               android:text="分享网页至朋友圈"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content" />
+           <Button
+               android:id="@+id/btn_share_web_friend"
+               android:text="分享网页给朋友"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content" />
+           <Button
+               android:id="@+id/btn_share_video_circle"
+               android:text="分享视频至朋友圈"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content" />
+           <Button
+               android:id="@+id/btn_share_video_friend"
+               android:text="分享视频给朋友"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content" />
+           <Button
+               android:text="分享文本至朋友圈"
+               android:id="@+id/btn_share_text_circle"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content" />
+           <Button
+               android:text="分享文本给朋友"
+               android:id="@+id/btn_share_text_friend"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content" />
+           <Button
+               android:text="分享图片至朋友圈"
+               android:id="@+id/btn_share_pic_circle"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content" />
+           <Button
+               android:text="分享图片给朋友"
+               android:id="@+id/btn_share_pic_friend"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content" />
+       </LinearLayout>
+    </ScrollView>
+
+
+
+</LinearLayout>

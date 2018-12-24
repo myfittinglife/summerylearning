@@ -129,12 +129,13 @@ public class DownloadService extends Service {
     private Notification getNotification(String title,int progress)
     {
         Intent intent = new Intent(this, ServiceActivity.class);
-        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);        //使得其意图为点击后打开ServiceActivity活动
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this,"download");
         builder.setSmallIcon(R.drawable.item_pic)                                   //只能使用纯alpha图层的图片进行设置
                 .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.drawable.item_pic2))
                 .setContentIntent(pendingIntent)
                 .setContentTitle(title);
+
         if(progress>=0){
             //当progress>=0的时候才需要显示进度
             builder.setContentText(progress + "%");

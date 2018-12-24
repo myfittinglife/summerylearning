@@ -17,10 +17,12 @@ import com.example.administrator.summarylearning.R;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-
 /**
- * 动画
- */
+*  @Author      LD
+*  @Time
+*  @Describe    动画
+*  @Modify
+*/
 public class AnimationActivity extends AppCompatActivity {
 
 

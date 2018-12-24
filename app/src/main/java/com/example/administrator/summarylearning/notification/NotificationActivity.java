@@ -221,6 +221,7 @@ public class NotificationActivity extends AppCompatActivity {
      * @param notifyNum             通知id
      */
     public void sendCommonMessage(String channelName,String contentTitle,String ContentText,int notifyNum){
+
         NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
 
         //若通知渠道被用户关闭了，则让用户跳转至设置通知渠道的界面来更改其通知渠道的权限

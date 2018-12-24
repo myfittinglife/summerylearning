@@ -22,7 +22,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 /**
  * @Author LD
  * @Time 2018/11/23
- * @Describe retrofit（入门使用）
+ * @Describe retrofit（入门使用）接口均使用http://mock-api.com/app.html#!/scene-activity模客网生成
  * @Modify
  */
 public class RetrofitActivity extends AppCompatActivity {
@@ -40,8 +40,8 @@ public class RetrofitActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
 //        Gson gson = new Gson();
-//        DataBean bean = new DataBean("标题一","作者123","2018/11/23","内容一");
-//        String s = gson.toJson(bean);
+//        DataBean DataBean = new DataBean("标题一","作者123","2018/11/23","内容一");
+//        String s = gson.toJson(DataBean);
 //        Log.i(TAG, "json数据为: "+s);
 //--------------------------------------------------------------------------------------------------
 //        getCommenGson(456);

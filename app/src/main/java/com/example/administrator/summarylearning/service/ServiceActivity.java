@@ -1,6 +1,6 @@
 package com.example.administrator.summarylearning.service;
 
-import android.app.IntentService;
+
 import android.content.ComponentName;
 import android.content.Intent;
 import android.content.ServiceConnection;
@@ -19,9 +19,9 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 /**
- * @Author LD
- * @Time 2018/11/22
- * @Describe 服务的使用
+ * @Author      LD
+ * @Time        2018/11/22
+ * @Describe    服务的使用(启动服务别用action的方式启动,因为部分手机无法启动)
  * @Modify
  */
 public class ServiceActivity extends AppCompatActivity {

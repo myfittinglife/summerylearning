@@ -8,4 +8,7 @@
     <color name="grayLite">#DDDDDD</color>
     <color name="red">#e03525</color>
 
+
+    <color name="gray_background">#DDDDDD</color>
+
 </resources>

@@ -1,6 +1,7 @@
 package com.example.administrator.summarylearning.littlefeature;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -25,6 +26,8 @@ public class LittleFeatureActivity extends AppCompatActivity {
             Button btnJudgeinstall;
     @BindView(R.id.btn_judgenetstatus)
     Button btnJudgenetstatus;
+    @BindView(R.id.btn_evaluate)
+    Button btnEvaluate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,16 +36,26 @@ public class LittleFeatureActivity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.btn_judgeinstall, R.id.btn_judgenetstatus})
+    @OnClick({R.id.btn_judgeinstall, R.id.btn_judgenetstatus,R.id.btn_evaluate})
     public void onViewClicked(View view) {
         switch (view.getId()) {
-            case R.id.btn_judgeinstall:     //判断是否安装某应用
+            case R.id.btn_judgeinstall:         //判断是否安装某应用
                 startActivity(new Intent(this, JudgeInstallActivity.class));
                 break;
             case R.id.btn_judgenetstatus:      //判断网络状态
                 startActivity(new Intent(this, JudgeNetstatusActivity.class));
+                break;
+            case R.id.btn_evaluate:             //打开应用商店对指定的包名应用进行评价
+                String name = "com.example.asustp.coolweather";
+                Uri uri = Uri.parse("market://details?id=" + name);
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+                break;
             default:
                 break;
         }
     }
+
+
 }

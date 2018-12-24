@@ -79,6 +79,7 @@ public class JsBridgeActivity extends AppCompatActivity {
             case R.id.btn_goto:
                 Intent intent = new Intent(this, TextActivity.class);
                 startActivity(intent);
+
                 break;
             default:
                 break;

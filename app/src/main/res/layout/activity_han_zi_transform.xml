@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".hanzitransform.HanZiTransformActivity">
+
+    <EditText
+        android:id="@+id/et_hanzi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入汉字" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_to_fon"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="简转繁" />
+
+        <Button
+            android:id="@+id/btn_to_simple"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="繁转简" />
+
+        <Button
+            android:id="@+id/btn_fon_to_pinyin"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="繁转拼音" />
+
+        <Button
+            android:id="@+id/btn_simple_to_pinyin"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="简转拼音" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="转换后的文字"
+        android:textColor="@color/black"
+        android:textSize="20dp" />
+
+</LinearLayout>

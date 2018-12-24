@@ -22,7 +22,7 @@ import java.util.List;
  * 时间    2018/11/16 10:39
  * 描述    普通的Adapter
  */
-public class SlideBasicAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class    SlideBasicAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
 
     private List<BasicBean> mList;
@@ -156,7 +156,7 @@ public class SlideBasicAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
             nameBig = itemView.findViewById(R.id.item_big_name);               //姓名
             favoritesBig = itemView.findViewById(R.id.item_big_favorites);     //点赞
             commentsBig = itemView.findViewById(R.id.item_big_comments);       //评论
-            slideItem = itemView.findViewById(R.id.slide_item);         //删除
+            slideItem = itemView.findViewById(R.id.slide_item);                 //删除
 
         }
 

@@ -1,9 +1,13 @@
 package com.example.administrator.summarylearning;
 
+import android.app.Activity;
 import android.app.Application;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.content.Context;
+import android.content.pm.ApplicationInfo;
 import android.os.Build;
+import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 
 import com.lzy.okgo.OkGo;
@@ -12,20 +16,43 @@ import com.lzy.okgo.cache.CacheMode;
 import com.lzy.okgo.cookie.CookieJarImpl;
 import com.lzy.okgo.cookie.store.SPCookieStore;
 import com.lzy.okgo.interceptor.HttpLoggingInterceptor;
+import com.squareup.leakcanary.LeakCanary;
+import com.squareup.leakcanary.RefWatcher;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
 import okhttp3.OkHttpClient;
 
 public class ProjectApp extends Application {
+
+    //activity集合
+    private List<Activity> activities;
+    private static ProjectApp instance;
+
+    private boolean isDebug = false;
+    private RefWatcher refWatcher;
+
+
     @Override
     public void onCreate() {
         super.onCreate();
         initOKGO();
-        if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.O){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             initChannel();
         }
+        activities = new ArrayList<>();
+        registerActivityLifecycleCallbacks(activityLifecycleCallbacks);
+        instance = this;
+        refWatcher = LeakCanary.install(this);//内存泄漏,全局调用
+
+
+    }
+
+    public static synchronized ProjectApp getInstance() {
+        return instance;
     }
 
     private void initOKGO() {
@@ -53,7 +80,7 @@ public class ProjectApp extends Application {
 
     //通知渠道的建立
     @RequiresApi(api = Build.VERSION_CODES.O)
-    private void initChannel(){
+    private void initChannel() {
         String channelId = "download";                                                              //渠道ID
         String channelName = "下载消息";                                                            //渠道名称
         int importance = NotificationManager.IMPORTANCE_LOW;                                        //若为IMPORTANCE_HIGH会导致一直震动和响铃
@@ -63,6 +90,68 @@ public class ProjectApp extends Application {
         NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
         notificationManager.createNotificationChannel(channel);
 
+    }
+
+    //管理Activity的生命周期
+    private ActivityLifecycleCallbacks activityLifecycleCallbacks = new ActivityLifecycleCallbacks() {
+        @Override
+        public void onActivityCreated(Activity activity, Bundle savedInstanceState) {
+            activities.add(activity);
+        }
+
+        @Override
+        public void onActivityStarted(Activity activity) {
+
+        }
+
+        @Override
+        public void onActivityResumed(Activity activity) {
+
+        }
+
+        @Override
+        public void onActivityPaused(Activity activity) {
+
+        }
+
+        @Override
+        public void onActivityStopped(Activity activity) {
+
+        }
+
+        @Override
+        public void onActivitySaveInstanceState(Activity activity, Bundle outState) {
+
+        }
+
+        @Override
+        public void onActivityDestroyed(Activity activity) {
+            activities.remove(activity);
+        }
+    };
+
+    //退出应用程序
+    public void exit() {
+        for (int i = 0; i < activities.size(); i++) {
+            if (activities.get(i) != null) {
+                activities.get(i).finish();
+            }
+        }
+    }
+
+    public  boolean isDebug() {
+        try {
+            ApplicationInfo info = getInstance().getApplicationInfo();
+            return (info.flags & ApplicationInfo.FLAG_DEBUGGABLE) != 0;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    //用于监控Fragment的内存泄漏状况，看CreateFragment的使用
+    public static RefWatcher getRefWatcher(Context context){
+        ProjectApp projectApp = (ProjectApp) context.getApplicationContext();
+        return projectApp.refWatcher;
     }
 
 
