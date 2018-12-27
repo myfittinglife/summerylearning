@@ -5,5 +5,32 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".commentactivity.CommentActivity">
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="最新评论"
+        android:textColor="#333333"
+        android:gravity="center_vertical"
+        android:textSize="20sp" />
+    <TextView
+        android:id="@+id/tv_write_comment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/tv_title"
+        app:layout_constraintBottom_toBottomOf="@id/tv_title"
+        app:layout_constraintRight_toRightOf="parent"
+        android:text="写评论"
+        android:textColor="#D1A971"
+        android:textSize="18sp"
+        android:gravity="center_vertical"
+        android:drawableLeft="@mipmap/write_comment"
+        android:drawablePadding="@dimen/dp_10" />
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_comment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tv_title">
+    </android.support.v7.widget.RecyclerView>
 
 </android.support.constraint.ConstraintLayout>

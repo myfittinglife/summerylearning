@@ -14,6 +14,7 @@ import com.example.administrator.summarylearning.animation.AnimationActivity;
 import com.example.administrator.summarylearning.banneractivity.BannerActivity;
 import com.example.administrator.summarylearning.broadcastreceiver.BroadcastActivity;
 import com.example.administrator.summarylearning.clearcache.ClearCacheActivity;
+import com.example.administrator.summarylearning.commentactivity.CommentActivity;
 import com.example.administrator.summarylearning.commonviewpager.CommonViewPagerActivity;
 import com.example.administrator.summarylearning.downloadmanager.DownloadManagerActivity;
 import com.example.administrator.summarylearning.eventbus.EventBusActivity;
@@ -87,7 +88,6 @@ public class MainActivity extends AppCompatActivity {
             Button btn_fragment;
     @BindView(R.id.btn_jsbridge)
     Button btn_jsbridge;
-
     @BindView(R.id.btn_text)
     Button button;
     @BindView(R.id.btn_little_feature)      //小功能
@@ -234,7 +234,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(this, BroadcastActivity.class));
                 break;
             case R.id.btn_comment:                                                                  //评论功能
-
+                startActivity(new Intent(this, CommentActivity.class));
                 break;
             case R.id.btn_banner:                                                                   //轮播图
                 startActivity(new Intent(this, BannerActivity.class));

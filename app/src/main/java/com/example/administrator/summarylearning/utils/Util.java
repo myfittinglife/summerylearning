@@ -15,6 +15,12 @@ import android.graphics.BitmapFactory;
 import android.graphics.Bitmap.CompressFormat;
 import android.util.Log;
 
+/**
+*  @Author
+*  @Time
+*  @Describe    腾讯官方Demo分享中的工具类，未用到，提供方法
+*  @Modify
+*/
 public class Util {
 	
 	private static final String TAG = "SDK_Sample.Util";

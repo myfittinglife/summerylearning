@@ -73,6 +73,11 @@ public class ShareActivity extends AppCompatActivity {
     private String webpageUrl = "https://www.baidu.com/";
     //分享视频的地址 只要平凡-张杰
     private String videoUrl = "http://sochy.tcdn.qq.com/vcloud1049.tc.qq.com/1049_M0119900003sdHF20sPcJH1001574514.f40.mp4?vkey=DE930D4982A6B7751CC85F81F499ACFFD2443C42C7FDEE5096C820DEE421581E55447777B0872E9CC35B3F9CD775939542D4E56B8A28A8903B4358598B22F7F1EF7813B5A6C6D6A772970A325C59B1618C2B2F5AF75B8C18&ocid=2438469036";
+    //封面图
+    private String thumbUrl = "https://y.gtimg.cn/music/photo_new/T002R300x300M000002JFTnH3VpOQt.jpg?max_age=2592000";
+    //图片(原图)地址
+    private String imageUrl = "http://photo.weibo.com/3756672644/wbphotos/large/mid/4313204328858425/pid/dfea4684ly1fxtpdhnuqsj21jk2bcu0y";
+
 
 
     @Override
@@ -130,22 +135,28 @@ public class ShareActivity extends AppCompatActivity {
                 wxapi.sendReq(req);
                 break;
             case R.id.btn_share_music_circle:       //分享音乐至朋友圈
-                shareUtil.shareMusicToWX(musicWebUrl, musicUrl, SendMessageToWX.Req.WXSceneTimeline);
+                shareUtil.shareMusicToWX(musicWebUrl, musicUrl,thumbUrl,"只要平凡","张杰", SendMessageToWX.Req.WXSceneTimeline);
                 break;
             case R.id.btn_share_music_friend:       //分享音乐给朋友
-                shareUtil.shareMusicToWX(musicWebUrl, musicUrl, SendMessageToWX.Req.WXSceneSession);
+                shareUtil.shareMusicToWX(musicWebUrl, musicUrl, thumbUrl,"只要平凡","张杰",SendMessageToWX.Req.WXSceneSession);
                 break;
             case R.id.btn_share_web_circle:         //分享网页至朋友圈
-                shareUtil.shareWebpageToWX(webpageUrl, SendMessageToWX.Req.WXSceneTimeline);
+//                shareUtil.shareWebpageToWX(webpageUrl, "只要平凡","张杰",SendMessageToWX.Req.WXSceneTimeline);
+                shareUtil.shareWebpageToWX2(webpageUrl,thumbUrl,"只要平凡","张杰",SendMessageToWX.Req.WXSceneTimeline);
                 break;
             case R.id.btn_share_web_friend:         //分享网页给朋友
-                shareUtil.shareWebpageToWX(webpageUrl, SendMessageToWX.Req.WXSceneSession);
+//                shareUtil.shareWebpageToWX(webpageUrl, "只要平凡","张杰",SendMessageToWX.Req.WXSceneSession);
+                shareUtil.shareWebpageToWX2(webpageUrl,thumbUrl,"只要平凡","张杰",SendMessageToWX.Req.WXSceneSession);
                 break;
             case R.id.btn_share_video_circle:       //分享视频至朋友圈
-                shareUtil.shareVideoToWX(videoUrl, "只要平凡","张杰",SendMessageToWX.Req.WXSceneTimeline);
+//                shareUtil.shareVideoToWX(videoUrl, "只要平凡","张杰",SendMessageToWX.Req.WXSceneTimeline);
+                shareUtil.shareVideoToWX2(videoUrl,thumbUrl, "只要平凡","张杰",SendMessageToWX.Req.WXSceneTimeline);
+
                 break;
             case R.id.btn_share_video_friend:       //分享视频给朋友
-                shareUtil.shareVideoToWX(videoUrl, "只要平凡","张杰",SendMessageToWX.Req.WXSceneSession);
+//                shareUtil.shareVideoToWX(videoUrl, "只要平凡","张杰",SendMessageToWX.Req.WXSceneSession);
+                shareUtil.shareVideoToWX2(videoUrl, thumbUrl,"只要平凡","张杰",SendMessageToWX.Req.WXSceneSession);
+
                 break;
             case R.id.btn_share_text_circle:        //分享文本至朋友圈
                 shareUtil.shareTextToWX("测试分享文本", SendMessageToWX.Req.WXSceneTimeline);
@@ -154,10 +165,12 @@ public class ShareActivity extends AppCompatActivity {
                 shareUtil.shareTextToWX("测试分享文本", SendMessageToWX.Req.WXSceneSession);
                 break;
             case R.id.btn_share_pic_circle:         //分享图片至朋友圈
-                shareUtil.sharePictureToWX("",SendMessageToWX.Req.WXSceneTimeline);
+//                shareUtil.sharePictureToWX("",thumbUrl,SendMessageToWX.Req.WXSceneTimeline);
+                shareUtil.sharePictureToWX2(imageUrl,SendMessageToWX.Req.WXSceneTimeline);
                 break;
             case R.id.btn_share_pic_friend:         //分享图片给朋友
-                shareUtil.sharePictureToWX("",SendMessageToWX.Req.WXSceneSession);
+//                shareUtil.sharePictureToWX("",thumbUrl,SendMessageToWX.Req.WXSceneSession);
+                shareUtil.sharePictureToWX2(imageUrl,SendMessageToWX.Req.WXSceneSession);
                 break;
 
 
